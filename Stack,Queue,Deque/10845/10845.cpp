@@ -12,7 +12,7 @@ void push() {
 }
 
 void pop() {
-	if (!que.empty()) {
+	if (que.empty()) {
 		cout << -1 << '\n';
 	}
 	else {
@@ -22,7 +22,7 @@ void pop() {
 }
 
 void size() {
-	cout << que.size();
+	cout << que.size()<<'\n';
 }
 
 void empty() {
