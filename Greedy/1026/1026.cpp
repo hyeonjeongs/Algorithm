@@ -20,15 +20,8 @@ int main() {
 		cin >> b[i];
 
 	sort(a.begin(), a.end());
-	for (int i = 0; i < n; i++) {
-		cout << a[i] << " ";
-	}
-	cout << '\n';
 	sort(b.begin(), b.end(), greater<>());
-	for (int i = 0; i < n; i++) {
-		cout << b[i] << " ";
-	}
-	cout << '\n';
+
 	
 	for (int i = 0; i < n; i++) {
 		result += a[i] * b[i];
