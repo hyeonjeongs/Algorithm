@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: rrrr
+# Project: 1026
 # Configurations: Debug
 # =============================================================================
 
@@ -39,49 +39,49 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = D$:/github/Algorithm/Sort/rrrr/cmake-build-debug/
+cmake_ninja_workdir = D$:/github/Algorithm/Sort/1026/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target rrrr
+# Object build statements for EXECUTABLE target 1026
 
 
 #############################################
-# Order-only phony target for rrrr
+# Order-only phony target for 1026
 
-build cmake_object_order_depends_target_rrrr: phony || CMakeFiles/rrrr.dir
+build cmake_object_order_depends_target_1026: phony || CMakeFiles/1026.dir
 
-build CMakeFiles/rrrr.dir/main.cpp.obj: CXX_COMPILER__rrrr_Debug D$:/github/Algorithm/Sort/rrrr/main.cpp || cmake_object_order_depends_target_rrrr
-  DEP_FILE = CMakeFiles\rrrr.dir\main.cpp.obj.d
+build CMakeFiles/1026.dir/main.cpp.obj: CXX_COMPILER__1026_Debug D$:/github/Algorithm/Sort/1026/main.cpp || cmake_object_order_depends_target_1026
+  DEP_FILE = CMakeFiles\1026.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles\rrrr.dir
-  OBJECT_FILE_DIR = CMakeFiles\rrrr.dir
-  TARGET_COMPILE_PDB = CMakeFiles\rrrr.dir\
-  TARGET_PDB = rrrr.pdb
+  OBJECT_DIR = CMakeFiles\1026.dir
+  OBJECT_FILE_DIR = CMakeFiles\1026.dir
+  TARGET_COMPILE_PDB = CMakeFiles\1026.dir\
+  TARGET_PDB = 1026.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target rrrr
+# Link build statements for EXECUTABLE target 1026
 
 
 #############################################
-# Link the executable rrrr.exe
+# Link the executable 1026.exe
 
-build rrrr.exe: CXX_EXECUTABLE_LINKER__rrrr_Debug CMakeFiles/rrrr.dir/main.cpp.obj
+build 1026.exe: CXX_EXECUTABLE_LINKER__1026_Debug CMakeFiles/1026.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\rrrr.dir
+  OBJECT_DIR = CMakeFiles\1026.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\rrrr.dir\
-  TARGET_FILE = rrrr.exe
-  TARGET_IMPLIB = librrrr.dll.a
-  TARGET_PDB = rrrr.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\1026.dir\
+  TARGET_FILE = 1026.exe
+  TARGET_IMPLIB = lib1026.dll.a
+  TARGET_PDB = 1026.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\github\Algorithm\Sort\rrrr\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D D:\github\Algorithm\Sort\1026\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -92,7 +92,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\github\Algorithm\Sort\rrrr\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SD:\github\Algorithm\Sort\rrrr -BD:\github\Algorithm\Sort\rrrr\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D D:\github\Algorithm\Sort\1026\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SD:\github\Algorithm\Sort\1026 -BD:\github\Algorithm\Sort\1026\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -102,7 +102,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build rrrr: phony rrrr.exe
+build 1026: phony 1026.exe
 
 # =============================================================================
 # Folder targets.
@@ -110,9 +110,9 @@ build rrrr: phony rrrr.exe
 # =============================================================================
 
 #############################################
-# Folder: D:/github/Algorithm/Sort/rrrr/cmake-build-debug
+# Folder: D:/github/Algorithm/Sort/1026/cmake-build-debug
 
-build all: phony rrrr.exe
+build all: phony 1026.exe
 
 # =============================================================================
 # Built-in targets

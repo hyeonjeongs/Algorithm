@@ -1,3 +1,0 @@
-D:/github/Algorithm/Sort/rrrr/cmake-build-debug/CMakeFiles/rrrr.dir
-D:/github/Algorithm/Sort/rrrr/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/github/Algorithm/Sort/rrrr/cmake-build-debug/CMakeFiles/rebuild_cache.dir

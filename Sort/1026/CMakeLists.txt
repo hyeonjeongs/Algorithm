@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.23)
-project(rrrr)
+project(1026)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(rrrr main.cpp)
+add_executable(1026 main.cpp)

@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "rrrr",
+					"name" : "1026",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "rrrr::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-rrrr-Debug-ad80f6c057ed989682e8.json",
-					"name" : "rrrr",
+					"id" : "1026::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-1026-Debug-24438b817db0e2a7ccc8.json",
+					"name" : "1026",
 					"projectIndex" : 0
 				}
 			]
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/github/Algorithm/Sort/rrrr/cmake-build-debug",
-		"source" : "D:/github/Algorithm/Sort/rrrr"
+		"build" : "D:/github/Algorithm/Sort/1026/cmake-build-debug",
+		"source" : "D:/github/Algorithm/Sort/1026"
 	},
 	"version" : 
 	{
