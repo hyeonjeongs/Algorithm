@@ -34,7 +34,7 @@ int main() {
         score[i].second = i + 1;
     }
 
-    sort(score.begin(), score.end(), cmp); //내림차순 정렬
+    sort(score.begin(), score.end(), cmp); 
     num = scoreTotal();
 
     //결과 출력
