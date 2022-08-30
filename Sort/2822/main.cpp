@@ -25,6 +25,8 @@ int main() {
     int num = 0;
 
     score.assign(8, pair<int, int>(0, 0));
+
+    //입력 받기
     for (int i = 0; i < 8; i++) {
         int input;
         cin >> input;
@@ -32,7 +34,7 @@ int main() {
         score[i].second = i + 1;
     }
 
-    sort(score.begin(), score.end(), cmp);
+    sort(score.begin(), score.end(), cmp); //내림차순 정렬
     num = scoreTotal();
 
     //결과 출력
