@@ -17,7 +17,7 @@ void resultNum() {
 int main() {
 
 	int k, n;
-	
+
 	cin >> k;
 	for (int i = 0; i < k; i++) {
 		cin >> n;
@@ -30,6 +30,6 @@ int main() {
 	}
 
 	resultNum();
-	
+
 	return 0;
 }
