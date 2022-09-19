@@ -1,6 +1,6 @@
 # 분해합
 
-m = input()  # 분해합
+m = input() 
 cnt = 0
 list = []
 
@@ -8,11 +8,13 @@ list = []
 for i in range(1, int(m)):
     sum = 0 + i
     num = len(str(i))
+    
     for j in range(num):
         sum += int(str(i)[j])  # 현재 int->str 배열로 각자리 숫자 가져온 후 -> int로 변환하여 더하기
     if sum == int(m):
         cnt += 1
         list.append(i)
+        
 if cnt == 0:
     print(0)
 else:
