@@ -7,10 +7,10 @@ using namespace std;
 vector<pair<int, int>> flavor;
 void diffFlavor(int n) {
     int ans = INF;
-    for (int i = 1; i < (1 << n); i++) { 
+    for (int i = 1; i < (1 << n); i++) {
         int sour = 1, bitter = 0;
-        for (int j = 0; j < n; j++) { 
-            if (i & (1 << j)) { //1ÀÌ¸é ÇØ´ç Àç·á »ç¿ëÇÑ°Å
+        for (int j = 0; j < n; j++) {
+            if (i & (1 << j)) { //1ï¿½Ì¸ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ°ï¿½
                 sour *= flavor[j].first;
                 bitter += flavor[j].second;
             }
@@ -22,7 +22,7 @@ void diffFlavor(int n) {
 }
 int main() {
 
-    int n; 
+    int n;
     cin >> n;
     for (int i = 0; i < n; i++) {
         int sour, bitter;

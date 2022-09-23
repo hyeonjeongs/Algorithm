@@ -10,7 +10,7 @@ void findOrder(int n) {
 		vector<int>::iterator iter = order.begin();
 		for (int j = 0; j < higherNum[i]; j++)
 			iter++;
-		order.insert(iter, i + 1); //ÇØ´ç À§Ä¡¿¡ i+1 »ðÀÔ
+		order.insert(iter, i + 1); //ï¿½Ø´ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ i+1 ï¿½ï¿½ï¿½ï¿½
 	}
 
 	for (int i = 0; i < n; i++)
@@ -28,7 +28,7 @@ int main() {
 		cin >> ord;
 		higherNum[i] = ord;
 	}
-	
+
 
 	findOrder(n);
 }
