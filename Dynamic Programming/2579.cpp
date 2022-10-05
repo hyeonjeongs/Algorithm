@@ -4,7 +4,8 @@
 using namespace std;
 
 int maxScore(int n, vector<int> &score) {
-    vector<int> dp(n + 1, 0); // 최대값 저장하기
+    // 최대값 저장하기
+    vector<int> dp(n + 1, 0);
     if (n == 1) {
         return score[1];
     }
