@@ -7,7 +7,7 @@ priority_queue<int, vector<int>, greater<int>> pq;
 
 void solve(int num) {
     if (num == 0) {
-        if (!pq.empty()) {
+        if (!pq.empty()) { //q가 비어잇는 경우
             cout << pq.top() << '\n';
             pq.pop();
         }
@@ -25,6 +25,7 @@ int main() {
     cin.tie(NULL); cout.tie(NULL);
     int n;
 
+    // 입력
     cin >> n;
 
     for (int i = 0; i < n; i++) {
