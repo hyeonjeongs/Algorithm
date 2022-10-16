@@ -6,8 +6,8 @@ using namespace std;
 
 vector<pair<int, int>> score;
 vector<int> order(5,0);
-bool cmp(const pair<int, int> &a, const pair<int, int> &b) {
-    return a.first > b.first; // 내림차순 정렬
+bool cmp(const pair<int, int> &a, const pair<int, int> &b) { // 내림차순 정렬
+    return a.first > b.first;
 }
 
 int scoreTotal() {
