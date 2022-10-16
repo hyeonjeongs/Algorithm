@@ -30,7 +30,7 @@ int main() {
             if (j == 0)
                 distance += color[i][1] - color[i][0]; // �� ��
             else if (j == color[i].size() - 1)
-                distance += color[i][color[j].size() - 1] - color[i][color[j].size() - 2]; // �� ���κ�
+                distance += color[i][color[j].size() - 1] - color[i][color[j].size() - 2];
             else {
                 int left = color[i][j - 1];
                 int right = color[i][j + 1];
