@@ -14,7 +14,7 @@ int main() {
 
 	a.assign(n, 0);
 	b.assign(n, 0);
-	for (int i = 0; i < n; i++) 
+	for (int i = 0; i < n; i++)
 		cin >> a[i];
 	for (int i = 0; i < n; i++)
 		cin >> b[i];
@@ -22,7 +22,7 @@ int main() {
 	sort(a.begin(), a.end());
 	sort(b.begin(), b.end(), greater<>());
 
-	
+
 	for (int i = 0; i < n; i++) {
 		result += a[i] * b[i];
 	}
