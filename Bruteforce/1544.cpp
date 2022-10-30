@@ -8,7 +8,8 @@ using namespace std;
 void cycleWord(string str, set<string> &word) {
 
     for (auto iter: word) {
-        if (iter.size() != str.size()) //자리수 값 자체가 다르면 다른 단어
+        //자리수 값 자체가 다르면 다른 단어
+        if (iter.size() != str.size())
             continue;
         for (int j = 0; j < str.size(); j++) {
             if (str == iter)
