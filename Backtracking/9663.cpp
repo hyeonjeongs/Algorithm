@@ -1,3 +1,6 @@
+/*
+ * N-Queen 다른 방식
+ */
 #include <iostream>
 
 using namespace std;

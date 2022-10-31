@@ -1,5 +1,5 @@
 /*
- * N-Queen 다른 방식
+ * N-Queen 다른 방식(2)
  */
 #include <iostream>
 
