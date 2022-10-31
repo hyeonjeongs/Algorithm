@@ -42,7 +42,7 @@ int main() {
     for (int i = 0; i <= n - 8; i++) {
         for (int j = 0; j <= m - 8; j++) {
             int cnt = chessChange(i, j, board);//시작인덱스가 (i,j)인 체스판 만드는 최솟값
-            ans = min(ans, cnt); 
+            ans = min(ans, cnt);
         }
     }
 
