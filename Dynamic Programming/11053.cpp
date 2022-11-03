@@ -1,31 +1,32 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 
 using namespace std;
 
-vector<int> num;
-vector<int> dp;
-int maxLength(int n) {
-    int maxN = 0;
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < i; j++) {
-            if (num[i] > num[j])
-                dp[i] = max(dp[i], dp[j] + 1);
+int dp(int n, vector<int>& a){
+    vector<int> num(n, 1);
+    int result = 1;
+    for(int i=1; i<n; i++){
+        for(int j=0; j<i; j++){
+            if(a[i] > a[j]){ //증가하고 있는 경우 현재값과 전에것과 더해진 값중 더 큰값 저장하기
+                num[i] = max(num[j]+1, num[i]);
+            }
         }
-        maxN = max(maxN, dp[i]);
+        result = max(result, num[i]);
     }
-    return maxN;
+    return result;
 }
-int main() {
+
+int main(){
     int n;
-    cin >> n;
-    num.assign(n, 0);
-    dp.assign(1001, 1);
-    for (int i = 0; i < n; i++)
-        cin >> num[i];
+    cin>>n;
+    vector<int> a(n, 0);
 
-    cout << maxLength(n);
+    for(int i=0; i<n; i++){
+        cin>> a[i];
+    }
 
+    cout<<dp(n, a);
     return 0;
 }
