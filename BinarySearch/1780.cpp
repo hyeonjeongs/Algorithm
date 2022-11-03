@@ -11,7 +11,7 @@ bool isSameNum(int x, int y, int n) {
     int check = paper[x][y];
     for (int i = x; i < x+n; i++) {
         for (int j = y; j < y+n; j++) {
-            if (paper[i][j] != check) { //해당 수와 같지 않으면 빠져나오기
+            if (paper[i][j] != check) {
                 return false;
             }
         }

@@ -10,12 +10,12 @@ int router(int dist) {
     int pos = house[0];
 
     for (int i = 1; i < house.size(); i++) {
-        if (house[i] - pos < dist) 
+        if (house[i] - pos < dist)
             continue;
         cnt++;
         pos = house[i];
     }
-    return cnt; //설치된 공유기 수
+    return cnt;
 }
 
 int binarySearch(int left, int right, int c) {
@@ -24,9 +24,9 @@ int binarySearch(int left, int right, int c) {
         int mid = (left + right) / 2;
         int installed = router(mid);
 
-        if (installed < c) //거리를 줄이기
+        if (installed < c)
             right = mid - 1;
-        else if (installed >= c) { //거리를 늘리기
+        else if (installed >= c) {
             result = mid;
             left = mid + 1;
         }

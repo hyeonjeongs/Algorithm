@@ -23,9 +23,9 @@ int main() {
     while (m--) {
         int num;
         cin >> num;
-        //upper bound - 초과, loger bound - 이상 (num을 기준으로)
+
         cout << upper_bound(card.begin(), card.end(), num) - lower_bound(card.begin(), card.end(), num) << " ";
-        
+
     }
 
     return 0;
