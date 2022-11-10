@@ -30,10 +30,7 @@ vector<bool> solution(vector<string> members, vector<vector<string>> commands, v
     return answer;
 }
 
-int main(){
 
-
-}
 
 #include <iostream>
 #include <string>

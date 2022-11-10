@@ -54,9 +54,6 @@ int calcScore() {
 }
 
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(NULL);
-    cout.tie(NULL);
     string temp;
 
     for (int i = 1; i <= 4; i++) {
@@ -73,6 +70,7 @@ int main() {
         rotation.assign(5, 0);
         //회전 방향 결정
         decideRotation(num, rot);
+
         //회전하기
         rotate();
     }
