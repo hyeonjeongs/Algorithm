@@ -33,7 +33,8 @@ int main() {
         cin >> num >> alpha;
         current_position = (current_position + num) % n;
 
-        if (!wheelSpin(alpha, current_position, wheel, isChecked)) { // 행운의 숫자 아닌지 판단
+        // 행운의 숫자 아닌지 판단
+        if (!wheelSpin(alpha, current_position, wheel, isChecked)) {
             result = '!';
             break;
         }
