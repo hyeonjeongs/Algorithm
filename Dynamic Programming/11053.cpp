@@ -9,7 +9,8 @@ int dp(int n, vector<int>& a){
     int result = 1;
     for(int i=1; i<n; i++){
         for(int j=0; j<i; j++){
-            if(a[i] > a[j]){ //증가하고 있는 경우 현재값과 전에것과 더해진 값중 더 큰값 저장하기
+            //증가하고 있는 경우 현재값과 전에것과 더해진 값중 더 큰값 저장하기
+            if(a[i] > a[j]){
                 num[i] = max(num[j]+1, num[i]);
             }
         }
