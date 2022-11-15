@@ -23,7 +23,6 @@ int main() {
     }
 
     sort(atm.begin(), atm.end());
-
     cout << minAtm(n, atm);
 
     return 0;

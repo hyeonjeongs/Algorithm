@@ -12,7 +12,7 @@ int maxPack(int n, int k, vector<pi> &product) {
             dp[i][j] = dp[i - 1][j];
         }
         for (int j = product[i].first; j <= k; j++) { // 이제 현재 무게를 시작으로 배낭에 넣을지 결정
-            
+
             // 무게에 따라 넣을 수 있는 것이 현재 무게랑 합했을 때 작은 놈이라 (j - 현재 물품 무게)로 설정
             dp[i][j] = max(dp[i - 1][j - product[i].first] + product[i].second, dp[i - 1][j]); // 앞에꺼가 크면 배낭에 넣는 경우, 뒤에꺼가 크면 배낭에 안넣음
         }
