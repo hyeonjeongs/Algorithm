@@ -11,7 +11,7 @@ ll minCost(int n) {
     ll curCost = city[0];
 
     for (int i = 0; i < n-1; i++) {
-        if (curCost > city[i]) // �⸧���� �� �����Ѹ� ��ü
+        if (curCost > city[i])
             curCost = city[i];
         totCost += curCost * road[i];
     }
