@@ -8,6 +8,7 @@ int minNum(int n, int k, vector<int> coin) {
     for (int i = n - 1; i >= 0; i--) {
         if (k == 0)
             break;
+        
         cnt += k / coin[i]; //코인 개수
         k %= coin[i]; //남은 돈
     }
