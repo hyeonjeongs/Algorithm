@@ -19,7 +19,6 @@ void binarySearch(int left, int right) {
 		}
 		else
 			left = mid + 1;
-
 	}
 	cout << result << '\n';
 }
