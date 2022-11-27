@@ -23,7 +23,6 @@ int main() {
     while (m--) {
         int num;
         cin >> num;
-
         cout << upper_bound(card.begin(), card.end(), num) - lower_bound(card.begin(), card.end(), num) << " ";
 
     }
