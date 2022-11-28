@@ -31,6 +31,10 @@ int cookieLength(int left, int right, vector<int> &cookie, int m){
     return result;
 }
 
+/*
+ * left : 과자 최소 길이
+ * right : 과자 최대 길이
+ */
 int main(){
     int m, n;
     cin>> m>>n;
