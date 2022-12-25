@@ -18,7 +18,7 @@ int cookieLength(int left, int right, vector<int> &cookie, int m){
     int result; //과자 길이
     while (left<=right){
         int mid = (left + right)/2;
-        int cnt = cookieNum(cookie, mid); // 이 구간에 과자 몇명한테 줄수있는지
+        int cnt = cookieNum(cookie, mid); // 이 구간에 과자 몇 명한테 줄 수있는지
 
         if(cnt >= m){ // 과자 길이 늘리기 가능
             left = mid+1;
