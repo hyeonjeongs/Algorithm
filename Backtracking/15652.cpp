@@ -21,8 +21,11 @@ void backTracking(int cnt, int start) {
 }
 
 int main() {
+    //입력
     cin >> n >> m;
     num.assign(m, 0);
+
+    //백트레킹
     backTracking(0, 1);
 
     return 0;
