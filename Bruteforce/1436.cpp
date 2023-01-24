@@ -25,8 +25,6 @@ int endNum(int n){
 int main(){
     int n;
     cin>>n;
-
     cout<<endNum(n)<<'\n';
-
     return 0;
 }
