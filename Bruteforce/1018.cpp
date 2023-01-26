@@ -45,6 +45,7 @@ int main() {
             ans = min(ans, cnt);
         }
     }
+    
 
     //출력
     cout << ans << '\n';
