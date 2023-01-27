@@ -29,7 +29,6 @@ void backtracking(int row) { //row: 행
             check_right[row - i + n] = false;
         }
     }
-
 }
 
 
