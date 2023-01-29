@@ -17,7 +17,6 @@ void backTracking(int cnt, int start) {
         num[cnt] = i;
         backTracking(cnt + 1, i);
     }
-
 }
 
 int main() {
