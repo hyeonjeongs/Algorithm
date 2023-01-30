@@ -20,6 +20,7 @@ void permutation(int n) {
 				cnt++;
 		}
 	}
+
 	cout << cnt;
 }
 
