@@ -10,7 +10,7 @@ void diffFlavor(int n) {
     for (int i = 1; i < (1 << n); i++) {
         int sour = 1, bitter = 0;
         for (int j = 0; j < n; j++) {
-            if (i & (1 << j)) { //1�̸� �ش� ��� ����Ѱ�
+            if (i & (1 << j)) {
                 sour *= flavor[j].first;
                 bitter += flavor[j].second;
             }
