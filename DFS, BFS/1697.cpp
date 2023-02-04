@@ -25,7 +25,7 @@ int bfs(int n, int k) {
         vector<int> child = {node - 1, node + 1, 2 * node};
 
         for (int i = 0; i < 3; i++) {
-            if (child[i] >= 0 && child[i] <= SIZE && !visited[child[i]]) { // 헤칼린부분: 세가지로 나눠지면서 겹치는노드도 고려해야하는거 아닌가? -> 이미 왔던 거라 시간이 짧을 것이므로 방문안한거만 생각하면됨(어차피 최소가 깨짐)
+            if (child[i] >= 0 && child[i] <= SIZE && !visited[child[i]]) { 
                 visited[child[i]] = visited[node] + 1;
                 q.push(child[i]);
             }
