@@ -25,7 +25,7 @@ int bfs(int n, int k) {
         vector<int> child = {node - 1, node + 1, 2 * node};
 
         for (int i = 0; i < 3; i++) {
-            if (child[i] >= 0 && child[i] <= SIZE && !visited[child[i]]) { 
+            if (child[i] >= 0 && child[i] <= SIZE && !visited[child[i]]) {
                 visited[child[i]] = visited[node] + 1;
                 q.push(child[i]);
             }
