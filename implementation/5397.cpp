@@ -10,7 +10,7 @@ string stackToString(stack<char> &left, stack<char> &right) {
         right.push(left.top());
         left.pop();
     }
-    
+
     while (!right.empty()) {
         pwd += right.top();
         right.pop();
