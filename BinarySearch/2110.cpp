@@ -2,6 +2,10 @@
 #include<vector>
 #include <algorithm>
 
+/**
+ * 다시 풀어보기
+ */
+
 using namespace std;
 vector<int> house;
 int router(int dist){
