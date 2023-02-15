@@ -36,7 +36,7 @@ void operationResult(int result, int index) {
         if (operation[i]) {
             operation[i]--;
             operationResult(calculation(result, num[index], i), index + 1);
-            operation[i]++;
+            operation[i]++; // 원래대로 돌려주기
         }
     }
 
