@@ -39,6 +39,7 @@ void operationResult(int result, int index) {
             operation[i]++; // 원래대로 돌려주기
         }
     }
+    
 
 }
 

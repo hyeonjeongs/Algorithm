@@ -5,7 +5,6 @@
 #include <algorithm>
 
 using namespace std;
-typedef pair<string ,int> ci;
 
 void formatSave(string str, map<string, int> &file_num, vector<string> &files){
 
@@ -13,7 +12,7 @@ void formatSave(string str, map<string, int> &file_num, vector<string> &files){
     string name = str.substr(index+1);
 
 
-    if(file_num.find(name) == file_num.end()){
+    if(file_num.find(name) == file_num.end()){ // 현재 없는 확장자인 경우
         file_num[name] = 1;
         files.push_back(name);
         return;
