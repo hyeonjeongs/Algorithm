@@ -1,3 +1,43 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int n, m;
+bool check[9] ={false,};
+vector<int> arr;
+
+void backTracking(int index) {
+    if(index == m){
+        for(int i=0; i<m; i++){
+            cout<<arr[i]<<' ';
+        }
+        cout << '\n';
+        return;
+    }
+
+    for(int i=1; i<=n; i++){
+        if(!check[i]){
+            arr[index] = i;
+            check[i] = true;
+            backTracking(index+1);
+            check[i] = false;
+        }
+    }
+
+}
+
+int main() {
+
+    cin>> n>> m;
+
+    arr.assign(m+1,0);
+    backTracking(0);
+
+    return 0;
+}
+
+/*
 #include<iostream>
 #include<vector>
 
@@ -30,4 +70,4 @@ int main() {
     backTracking(0);
 
     return 0;
-}
+}*/
