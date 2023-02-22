@@ -1,0 +1,6 @@
+-- https://school.programmers.co.kr/learn/courses/30/lessons/131120
+
+SELECT MEMBER_ID, MEMBER_NAME, GENDER, DATE_FORMAT(date_of_birth, "%Y-%m-%d") AS DATE_OF_BIRTH
+FROM MEMBER_PROFILE
+WHERE MONTH(DATE_OF_BIRTH) = 03 AND TLNO IS NOT NULL AND GENDER = 'W'
+ORDER BY MEMBER_ID;
