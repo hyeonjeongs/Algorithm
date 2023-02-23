@@ -3,6 +3,38 @@
 
 using namespace std;
 
+int stairsScore(vector<int> &stairs, int n){
+    vector<int> dp(n+1,0);
+
+    dp[1] = stairs[0];
+    dp[2]= stairs[0] + stairs[1];
+    for(int i=3; i<=n; i++){
+        dp[i] = max(dp[i-2], dp[i-3]+stairs[i-2]) + stairs[i-1];
+    }
+
+    return dp[n];
+}
+
+int main(){
+    int n;
+    cin>> n;
+    vector<int> stairs (n,0);
+
+    for(int i=0; i<n; i++){
+        cin >> stairs[i];
+    }
+
+    cout<< stairsScore(stairs, n);
+
+    return 0;
+}
+
+/*
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
 int maxScore(int n, vector<int> &score) {
     // 최대값 저장하기
     vector<int> dp(n + 1, 0);
@@ -34,4 +66,4 @@ int main() {
     cout << maxScore(n, score);
 
     return 0;
-}
+}*/
