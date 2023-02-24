@@ -1,3 +1,5 @@
+// 한가지 방향을 쭉 가는게 아니라 여러방향가면서 최단경로 찾는거라서 bfs임
+
 #include <iostream>
 #include <queue>
 #include <vector>

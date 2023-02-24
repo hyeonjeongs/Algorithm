@@ -60,5 +60,6 @@ int main() {
     for(int i=0; i<home.size(); i++){
         cout<< home[i] <<'\n';
     }
+
     return 0;
 }
