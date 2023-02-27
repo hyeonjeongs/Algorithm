@@ -32,6 +32,7 @@ void bfs(vector<vector<int>> &island, int row, int col){
     }
 }
 
+
 int main() {
     while (1) {
         cin >> w >> h;
