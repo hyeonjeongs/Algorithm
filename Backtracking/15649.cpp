@@ -4,6 +4,48 @@
 using namespace std;
 
 int n, m;
+vector<int> arr;
+vector<bool> check;
+void backTracking(int index){
+
+    if(index == m){
+        for(auto i: arr){
+            cout<< i<<' ';
+        }
+        cout<<'\n';
+        return;
+    }
+
+    for(int i=1; i<=n; i++){
+        if(!check[i]){
+            arr[index] = i;
+            check[i]= true;
+            backTracking(index+1);
+            check[i] = false;
+        }
+
+    }
+}
+
+int main(){
+
+    cin>>n>>m;
+    arr.assign(m,0);
+    check.assign(n+1,false);
+
+    backTracking(0);
+
+    return 0;
+}
+
+
+/*
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int n, m;
 bool check[9] ={false,};
 vector<int> arr;
 
@@ -37,6 +79,7 @@ int main() {
     return 0;
 }
 
+*/
 /*
 #include<iostream>
 #include<vector>
@@ -71,3 +114,4 @@ int main() {
 
     return 0;
 }*/
+
