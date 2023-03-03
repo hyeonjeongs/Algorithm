@@ -29,6 +29,7 @@ int minDay(vector<vector<int>> &tomato) {
         int cur_row = get<0>(que.front());
         int cur_col = get<1>(que.front());
         cnt = get<2>(que.front());
+        //auto [r,c,cnt] = que.front(); -> 이렇게 한방에 가능
         que.pop();
 
         for (int i = 0; i < 4; i++) {
