@@ -15,7 +15,7 @@ vector<vector<bool>> visit;
 vector<ci> location;
 
 int minDay(vector<vector<int>> &tomato) {
-    // 0이고 양옆위아래 다 -1이면 -1 return
+
     int cnt=0;
     queue<tu> que;
 
