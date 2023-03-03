@@ -10,7 +10,7 @@ typedef pair<int, int> ci;
 int m, n;
 int dx[] = {0, 0, -1, 1};
 int dy[] = {1, -1, 0, 0};
-int day = 0;
+
 vector<vector<bool>> visit;
 vector<ci> location;
 
