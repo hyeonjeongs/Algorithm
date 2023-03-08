@@ -27,7 +27,6 @@ int main(){
     int n;
 
     cin>> n;
-
     cout<< binaryNum(n)%15746<<'\n';
 
     return 0;
