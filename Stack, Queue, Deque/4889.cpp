@@ -29,7 +29,7 @@ int stableString(stack<char> st) {
                 cnt++;
                 st.pop();
             }
-            
+
         } else {
             st.pop();
             if (st.top() == '}') { // 괄호 한번더 변경
