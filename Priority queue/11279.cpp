@@ -17,7 +17,7 @@ void solve(int input, priority_queue<int, vector<int>>& pq) {
     else if (input > 0) {
         pq.push(input);
     }
-    
+
 }
 
 int main() {
