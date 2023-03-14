@@ -15,7 +15,7 @@ void dp(int n) {
         if(i%2==0){
             num[i] = min(num[i/2] +1, num[i]);
         }
-        
+
     }
 
     cout<< num[n] <<'\n';
