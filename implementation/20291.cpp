@@ -19,7 +19,6 @@ void formatSave(string str, map<string, int> &file_num, vector<string> &files){
     }
 
     file_num[name]++;
-
 }
 
 int main(){
