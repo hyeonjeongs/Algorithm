@@ -56,7 +56,6 @@ void inverseWord(vector<char> str){
                 st.pop();
             }
         }
-
         st.push(str[i]);
     }
 }
