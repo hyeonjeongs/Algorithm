@@ -22,5 +22,5 @@
 | Shortest path | [Shortest path](https://github.com/hyeonjeongs/Algorithm/tree/main/Shortest%20path) |
 | Union-Find | [Union-Find](https://github.com/hyeonjeongs/Algorithm/tree/main/Union-Find) |
 | BinarySearch | [BinarySearch](https://github.com/hyeonjeongs/Algorithm/tree/main/BinarySearch) |
-| :---------:|:----------:|
 | SQL | [sql](https://github.com/hyeonjeongs/Algorithm/tree/main/sql) |
+| :---------:|:----------:|
