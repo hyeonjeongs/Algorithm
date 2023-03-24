@@ -1,73 +1,83 @@
-#include<iostream>
-#include<vector>
-
+#include <iostream>
+#include <vector>
 using namespace std;
 
 vector<bool> truth;
 vector<int> parent;
 
-int findParent(int node) {
-    if (parent[node] < 0)
+int findParent(int node){
+    if(parent[node] <0){
         return node;
+    }
     return parent[node] = findParent(parent[node]);
 }
 
-void unionParent(int a, int b) {
-    int ra = findParent(a);
-    int rb = findParent(b);
+void unionNum(int x, int y){
+    int xp = findParent(x);
+    int yp = findParent(y);
 
-    if (ra == rb) //���� ������ ���
+    if(xp == yp){
         return;
-    if (truth[ra] || truth[rb])
-        truth[ra] = truth[rb] = true;
-    if (parent[ra] < parent[rb]) {
-        parent[ra] += parent[rb];
-        parent[rb] = ra;
     }
-    else {
-        parent[rb] += parent[ra];
-        parent[ra] = rb;
+    if(truth[xp] || truth[yp]){
+        truth[xp] = truth[yp] = true;
     }
 
+    if(parent[xp] < parent[yp]){
+        parent[xp] += parent[yp];
+        parent[yp]= xp;
+    }else{
+        parent[yp] += parent[xp];
+        parent[xp] = yp;
+    }
 }
 
-int partyNum(vector<int> group){
-    int cnt = 0;
-    for (int i = 0; i < group.size(); i++) {
-        int parent = findParent(group[i]);
-        if (!truth[parent])
+
+
+int foolParty(int m, vector<int> &party){
+    int cnt=0;
+
+    for(int i=0; i<m; i++){
+        int node = findParent(party[i]);
+        if(!truth[node]){
             cnt++;
+        }
     }
 
     return cnt;
 }
 
-int main() {
-    int n, m;
-    int know, p;
-    cin >> n >> m;
-    truth.assign(n + 1, false);
-    parent.assign(n + 1, -1);
+int main(){
+    int n, m, tr;
+    cin>>n>>m>>tr;
 
-    cin >> know;
-    while (know--) { // ���Ǿƴ� ��� �Է�
-        cin >> p;
-        truth[p] = true;
+    truth.assign(n+1,false);
+    parent.assign(n+1, -1);
+
+
+    vector<int> party;
+
+    int input;
+    for(int i=0; i<tr; i++){
+        cin>>input;
+        truth[input] = true; // 아는 사람
     }
 
-    int cnt, firstP, person;
-    vector<int> group;
-    while (m--) {
-        cin >> cnt >> firstP;
-        group.push_back(firstP);
+    int first_person, person;
+    for(int i=0; i<m; i++){
+        cin>>input>> first_person;
 
-        for (int i = 1; i < cnt; i++) {
-            cin >> person;
-            unionParent(firstP, person);
+        party.push_back(first_person);
+
+        while(--input){
+            cin>>person;
+            unionNum(first_person, person);
         }
     }
 
-    cout << partyNum(group);
+    int result = foolParty(m, party);
+
+    cout<< result<<'\n';
 
     return 0;
 }
