@@ -1,4 +1,32 @@
-#include <iostream>
+#include<iostream>
+#include<vector>
+#include<algorithm>
+
+using namespace std;
+
+int addMin(vector<int> &times, int n){
+    int sum=times[0];
+    for(int i=1; i<n; i++){
+        times[i] += times[i-1];
+        sum+=times[i];
+    }
+    return sum;
+}
+
+int main(){
+    int n;
+    cin>>n;
+
+    vector<int> times(n,0);
+    for(int i=0;i <n; i++){
+        cin>> times[i];
+    }
+    sort(times.begin(), times.end());
+
+    cout<<addMin(times, n);
+}
+
+/*#include <iostream>
 #include <vector>
 #include <algorithm>
 
@@ -30,7 +58,7 @@ int main(){
     cout<<minTime(n, p);
 
     return 0;
-}
+}*/
 
 /*
 #include<iostream>
