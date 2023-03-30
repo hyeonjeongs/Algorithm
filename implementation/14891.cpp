@@ -63,6 +63,7 @@ int main() {
         }
     }
 
+    
     int n, num, rot;
     cin >> n;
     while (n--) {
