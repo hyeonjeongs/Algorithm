@@ -22,7 +22,6 @@ void findLocation(int num, vector<vector<int>> &bingo){
 int lineCheck(vector<vector<int>> &check) {
     int row_num = 0, col_num = 0, right_num = 0, left_num = 0;
     int cnt=0;
-
     check[row][col] = 1;
 
     for (int i = 1; i <= 5; i++) {
