@@ -14,7 +14,6 @@ void cycleWord(string str, set<string> &word) {
         for (int j = 0; j < str.size(); j++) {
             if (str == iter)
                 return;
-
             //단어 크기 만큼 돌려줌
             rotate(str.begin(), str.begin() + 1, str.end());
         }
