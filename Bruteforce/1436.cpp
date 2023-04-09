@@ -1,5 +1,4 @@
 #include<iostream>
-#include<vector>
 
 using namespace std;
 
@@ -15,7 +14,6 @@ int endNum(int n){
             }
             num/=10;
         }
-
         if(cnt==n){
             return i;
         }
