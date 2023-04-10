@@ -53,7 +53,6 @@ int main() {
     for (int i = 0; i < 4; i++) {
         cin >> operation[i];
     }
-
     operationResult(num[0], 1);
 
     cout << my_max << '\n' << my_min << '\n';
