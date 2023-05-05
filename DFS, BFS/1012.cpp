@@ -58,6 +58,5 @@ int main() {
         }
         cout << cnt << '\n';
     }
-
     return 0;
 }
