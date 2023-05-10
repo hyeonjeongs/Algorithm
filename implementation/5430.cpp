@@ -67,7 +67,7 @@ int main(){
         if(arr.size()>2){
             arr_v = splitString(arr, n);
         }
-        
+
         for(int i=0; i<str.length(); i++){
             if(str[i] == 'R'){
                 isReverse*=-1;
