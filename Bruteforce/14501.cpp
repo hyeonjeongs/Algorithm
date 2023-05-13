@@ -17,7 +17,6 @@ void maxConsul(int n, vector<ci> &consulting, int start, int sum) {
         maxConsul(n, consulting, i + consulting[i].first, sum + consulting[i].second);
 }
 
-
 int main() {
     int n; //퇴사까지 남은 날
 
