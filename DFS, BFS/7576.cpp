@@ -14,6 +14,7 @@ int dy[] = {1, -1, 0, 0};
 vector<vector<bool>> visit;
 vector<ci> location;
 
+
 int minDay(vector<vector<int>> &tomato) {
 
     int cnt=0;
