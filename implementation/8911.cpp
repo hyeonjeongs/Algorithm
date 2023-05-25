@@ -36,7 +36,6 @@ int turtleMinArea(string str) {
 
     return (max_x - min_x) * (max_y - min_y);
 }
-
 int main() {
     int t;
     string str;
