@@ -27,7 +27,6 @@ void inverseWord(vector<char> str){
             }
             continue;
         }
-
         // 반대 숫자 출력하기
         if(str[i]==' ' || str[i] =='<'){
             // 스택에 넣은 단어 출력
