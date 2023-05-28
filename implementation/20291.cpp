@@ -17,7 +17,6 @@ void formatSave(string str, map<string, int> &file_num, vector<string> &files){
         files.push_back(name);
         return;
     }
-
     file_num[name]++;
 }
 
