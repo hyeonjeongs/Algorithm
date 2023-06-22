@@ -16,6 +16,7 @@ int rgbDp(int n) {
 	return min(rgb[n][0], min(rgb[n][1], rgb[n][2]));
 }
 
+
 int main() {
 	int n;
 	cin >> n;
