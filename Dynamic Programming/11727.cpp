@@ -22,6 +22,5 @@ int main() {
     // 입력
     cin >> n;
     cout << tileDp(n);
-
     return 0;
 }
