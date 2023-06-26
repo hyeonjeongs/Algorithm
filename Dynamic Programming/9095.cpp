@@ -11,7 +11,6 @@ int addNum(int input){
     for(int i=4; i<=input; i++){
         dp[i] = dp[i-1]+dp[i-2]+dp[i-3];
     }
-
     return dp[input];
 }
 
