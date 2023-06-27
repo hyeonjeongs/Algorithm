@@ -26,6 +26,7 @@ int maxSum(vector<vector<int>> rec, int n) {
     return dp[n - 1][0];
 }
 
+
 int main() {
     int n;
     cin >> n;
