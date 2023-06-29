@@ -21,6 +21,7 @@ int maxPack(int n, int k, vector<pi> &product) {
 
 }
 
+
 int main() {
     int n, k;
     cin >> n >> k;
