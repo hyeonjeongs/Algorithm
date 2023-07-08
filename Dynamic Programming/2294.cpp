@@ -15,6 +15,8 @@ int maxCount(vector<int> coin, int n, int k){
     if(dp[k] == MAX){
         return -1;
     }
+
+    
     return dp[k];
 }
 
