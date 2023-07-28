@@ -16,7 +16,7 @@ int dp(int n, vector<int>& a){
         }
         result = max(result, num[i]);
     }
-    
+
     return result;
 }
 

@@ -18,7 +18,6 @@ int maxPack(int n, int k, vector<pi> &product) {
         }
     }
     return dp[n][k];
-
 }
 
 
