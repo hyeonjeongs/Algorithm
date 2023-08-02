@@ -34,6 +34,7 @@ int bfs(int n, int k) {
         }
 
     }
+
     return result;
 }
 
