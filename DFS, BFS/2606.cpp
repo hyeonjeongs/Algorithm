@@ -23,6 +23,7 @@ int dfs(int n) {
                 cnt++;
             }
         }
+        
     }
 
     return cnt;

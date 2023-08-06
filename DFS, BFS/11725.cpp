@@ -18,7 +18,7 @@ void dfsTree(int prev, int curr) {
     for (int i = 0; i < tree[curr].size(); i++) {
         dfsTree(curr, tree[curr][i]);
     }
-    
+
 }
 
 int main() {
