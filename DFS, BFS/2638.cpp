@@ -17,6 +17,5 @@ int main(){
             cin>>papers[i][j];
         }
     }
-
     cout<<solution(papers);
 }
