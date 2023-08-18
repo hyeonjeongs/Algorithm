@@ -19,6 +19,7 @@ int minDay(vector<vector<int>> &tomato) {
     int cnt=0;
     queue<tu> que;
 
+
     // 먼저 익은 토마토인거 저장하기
     for (int i = 0; i < location.size(); i++) {
         que.push(tu(location[i].first, location[i].second, 0));
