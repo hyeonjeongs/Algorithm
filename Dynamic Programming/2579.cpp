@@ -11,6 +11,7 @@ int stairsScore(vector<int> &stairs, int n){
     for(int i=3; i<=n; i++){
         dp[i] = max(dp[i-2], dp[i-3]+stairs[i-2]) + stairs[i-1];
     }
+    
     return dp[n];
 }
 
