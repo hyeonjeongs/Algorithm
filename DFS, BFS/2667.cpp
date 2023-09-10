@@ -26,6 +26,7 @@ void bfs(int y, int x) {
         if(new_x>0 && new_x<=n && new_y>0 && new_y<=n && aMatrix[new_y][new_x] && !visit[new_y][new_x]){
             bfs(new_y, new_x);
         }
+        
     }
 }
 
