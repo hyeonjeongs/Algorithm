@@ -47,7 +47,6 @@ int main() {
                 cin >> island[i][j];
             }
         }
-
         // 연산
         int ans =0;
         for(int i =0; i<h; i++){
