@@ -32,7 +32,6 @@ int bfs(int n, int k) {
                 q.push(child[i]);
             }
         }
-
     }
 
     return result;
