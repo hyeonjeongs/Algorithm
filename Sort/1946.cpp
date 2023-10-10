@@ -15,6 +15,7 @@ int maxMembers(vector<ci> &members, int n) {
             rank = members[i].second;
         }
     }
+
     return cnt;
 }
 
