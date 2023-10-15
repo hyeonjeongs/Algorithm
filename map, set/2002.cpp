@@ -1,8 +1,38 @@
-#include<iostream>
-#include<map>
+#include <iostream>
+#include <map>
 #include <vector>
 
 using namespace std;
+
+int main() {
+
+    int n, num=0;
+    cin>> n;
+
+    map<string, int> cars;
+
+    for(int i=1; i<=n; i++) {
+        string input;
+        cin>>input;
+        cars[input] = i;
+    }
+
+    for(int i=1; i<=n; i++) {
+        string input;
+        cin>>input;
+
+        if( cars[input] - i >= 0) {
+            num++;
+        }
+    }
+    cout<<num;
+
+    return 0;
+}
+
+
+/*
+
 
 // 추월한 차가 몇 개인지 구하는 함수
 int outCar(int n, vector<string> &out_car, map<string, int> &cars){
@@ -35,4 +65,4 @@ int main() {
     cout<< outCar(n, out_car, cars);
 
     return 0;
-}
+}*/
