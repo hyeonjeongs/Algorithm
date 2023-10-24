@@ -6,7 +6,6 @@ using namespace std;
 void minNum(int n) {
     int five=0, three=0;
     int num;
-
     five = n / 5;
 
     while (1) {
