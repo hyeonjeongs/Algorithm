@@ -9,7 +9,6 @@ vector<int> order(5,0);
 bool cmp(const pair<int, int> &a, const pair<int, int> &b) { // 내림차순 정렬
     return a.first > b.first;
 }
-
 int scoreTotal() {
     int total = 0;
     for (int i = 0; i < 5; i++){
