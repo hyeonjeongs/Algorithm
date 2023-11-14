@@ -18,7 +18,6 @@ ll maxTips(vector<int> &tips, int n) {
         }
         maxTip += num;
     }
-
     return maxTip;
 }
 
