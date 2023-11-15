@@ -20,7 +20,6 @@ int main() {
     // 입력
     int num;
     cin >> num;
-
     for (int i = 0; i < num; i++) {
         int x, y;
         cin >> x >> y;
