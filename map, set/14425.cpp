@@ -30,3 +30,39 @@ int main(){
 
     return 0;
 }
+
+/*
+ *
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+int num=0;
+
+void strCheck(string input, map<string,bool>& str) {
+    if(str.find(input) != str.end()){
+        num++;
+    }
+}
+
+int main() {
+    int n, m;
+    cin>>n>>m;
+    map<string, bool> str;
+    string input;
+
+    for(int i=0; i<n; i++) {
+
+        cin>>input;
+        str.insert({input, true});
+
+    }
+    for(int i=0; i<m; i++) {
+        cin>>input;
+        strCheck(input, str);
+    }
+    cout<<num<<'\n';
+    return 0;
+}
+ */
