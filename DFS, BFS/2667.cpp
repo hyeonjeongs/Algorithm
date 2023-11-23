@@ -43,7 +43,6 @@ int main() {
             scanf("%1d", &aMatrix[i][j]);
         }
     }
-
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             if (aMatrix[i][j] == 1 && !visit[i][j]) {
