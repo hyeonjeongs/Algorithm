@@ -19,7 +19,6 @@ vector<string> splitString(string arr, int n){
         previous = current + 1;
         current = name.find(',', previous);
     }
-
     return str_arr;
 }
 
