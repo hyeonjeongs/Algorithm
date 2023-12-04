@@ -12,6 +12,7 @@ int maxHeight(long long n, long long m, vector<long long> &tree) {
     long long left = 0;
     long long right = tree[n-1];
     long long result = 0;
+    
     while (left <= right) {
         long long num = 0;
         long long mid = (left + right) / 2;
