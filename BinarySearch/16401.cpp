@@ -11,6 +11,7 @@ int cookieNum(vector<int> &cookie, int mid){
             break;
         cnt += cookie[i]/mid;
     }
+
     return cnt;
 }
 
