@@ -16,7 +16,6 @@ void reset() {
             visit[i][j] = false;
         }
     }
-
 }
 
 void dfs(int height, int x, int y){
