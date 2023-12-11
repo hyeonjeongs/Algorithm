@@ -14,7 +14,6 @@ vector<int> home;
 vector<vector<int>> aMatrix;
 int num=0;
 int n;
-
 void bfs(int y, int x) {
 
     visit[y][x] = true; //방문처리
