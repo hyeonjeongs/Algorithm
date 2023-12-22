@@ -25,7 +25,6 @@ int minDay(vector<vector<int>> &tomato) {
         que.push(tu(location[i].first, location[i].second, 0));
         visit[location[i].first][location[i].second] = true;
     }
-
     while (!que.empty()) {
         int cur_row = get<0>(que.front());
         int cur_col = get<1>(que.front());
