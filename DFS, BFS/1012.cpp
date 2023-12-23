@@ -13,6 +13,7 @@ int cnt, m, n; // 가로길이, 세로길이
  * 1. 인접한 곳 모두 탐색해야해서 BFS, DFS 상관없음
  * 2. 좌표로 주어지므로 인접행렬로 구현해야 편함
  */
+
 // 재귀
 void dfs(int x, int y, vector<vector<int>>& cabbage, vector<vector<bool>>& visited) {
     for (int i = 0; i < 4; i++) {
