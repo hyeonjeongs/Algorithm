@@ -1,59 +1,70 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-// TOHAVE
 
 using namespace std;
-int n;
-int my_max = -(1e9 + 1);
-int my_min = 1e9 + 1;
-vector<int> operation(4);
-vector<int> num(11);
+int maxCount = 0;
+void rowCandyCount(char candy[51][51], int n) {
 
-int calculation(int a, int b, int c) {
-    switch (c) {
-        case 0: //+
-            return a + b;
-        case 1: //-
-            return a - b;
-        case 2: //*
-            return a * b;
-        case 3: // /
-            return a / b;
-    }
-}
-
-void operationResult(int result, int index) {
-
-    if (index == n) {
-        my_max = max(my_max, result);
-        my_min = min(my_min, result);
-
-        return;
-    }
-
-    for (int i = 0; i < 4; i++) {
-        if (operation[i]) {
-            operation[i]--;
-            operationResult(calculation(result, num[index], i), index + 1);
-            operation[i]++; // 원래대로 돌려주기
+    for(int i=0; i<n; i++) {
+        int count = 1;
+        for(int j=0; j<n; j++){
+            if(candy[i][j] == candy[i][j+1]){
+                count++;
+            }
+            else {
+                if(count > maxCount){
+                    maxCount = count;
+                }
+                count = 1;
+            }
         }
     }
-
-
+}
+void colCandyCount(char candy[51][51], int n) {
+    for(int i=0; i<n; i++) {
+        int count = 1;
+        for(int j=0; j<n; j++){
+            if(candy[j][i] == candy[j+1][i]){
+                count++;
+            }
+            else {
+                if(count > maxCount){
+                    maxCount = count;
+                }
+                count = 1;
+            }
+        }
+    }
 }
 
 int main() {
-    cin >> n;
-    for (int i = 0; i < n; i++) {
-        cin >> num[i];
-    }
-    // 연산자 개수
-    for (int i = 0; i < 4; i++) {
-        cin >> operation[i];
-    }
-    operationResult(num[0], 1);
+    int n;
+    char candy[51][51];
+    cin>>n;
 
-    cout << my_max << '\n' << my_min << '\n';
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n; j++) {
+            cin>>candy[i][j];
+        }
+    }
+
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n-1; j++) {
+            swap(candy[i][j], candy[i][j+1]);
+            rowCandyCount(candy, n);
+            colCandyCount(candy, n);
+
+            swap(candy[i][j+1], candy[i][j]);
+
+            swap(candy[j][i],candy[j+1][i]);
+            rowCandyCount(candy, n);
+            colCandyCount(candy, n);
+
+            swap(candy[j+1][i], candy[j][i]);
+        }
+    }
+
+    cout<<maxCount<<'\n';
     return 0;
 }
