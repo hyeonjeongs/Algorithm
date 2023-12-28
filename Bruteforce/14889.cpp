@@ -61,7 +61,6 @@ int findMinDiff(int n) {
     } while (next_permutation(is_teamA.begin() + 1, is_teamA.end()));
 
     return answer;
-
 }
 
 int main() {
