@@ -54,6 +54,5 @@ int main() {
     }
 
     cout<<findShortPath(1,1)<<'\n';
-
     return 0;
 }
