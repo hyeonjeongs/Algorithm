@@ -9,7 +9,6 @@ int maxSum(vector<vector<int>> rec, int n) {
     vector<vector<int>> dp(n, vector<int>(n, 0));
 
     dp[0][0] = rec[0][0];
-
     for (int i = 1; i < n; i++) {
         for (int j = 0; j < i + 1; j++) {
             if (j == 0) {
