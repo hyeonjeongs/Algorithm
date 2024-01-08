@@ -17,7 +17,6 @@ int maxSequence(int n, vector<int> &sequence){
         }
         result = max(result,dp[i]);
     }
-    
     return result;
 }
 
