@@ -11,7 +11,6 @@ vector<int> dx = {0,0,-1,1};
 vector<int> dy = {1,-1,0,0};
 int result=0;
 
-
 void makeTetromino(int depth, int x, int y, int sum){
     if(depth == 4){
         result = max(result, sum);
