@@ -53,7 +53,6 @@ int findMinDiff(int n) {
     }
 
     int answer = MAX_DIFF;
-
     do {
         // 팀이 결정된 상황
         // 팀 간의 능력치 차이를 구하고, 최솟값을 갱신
