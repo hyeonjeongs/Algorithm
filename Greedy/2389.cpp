@@ -19,7 +19,6 @@ void minNum(int n) {
             num = three + five;
             break;
         }
-
         five--;
     }
 
