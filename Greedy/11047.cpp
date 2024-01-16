@@ -11,6 +11,7 @@ int minNum(int n, int k, vector<int> coin) {
         cnt += k / coin[i]; //코인 개수
         k %= coin[i]; //남은 돈
     }
+    
     return cnt;
 }
 
