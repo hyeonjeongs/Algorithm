@@ -15,7 +15,6 @@ ll minCost(int n) {
             curCost = city[i];
         totCost += curCost * road[i];
     }
-    
     return totCost;
 }
 
