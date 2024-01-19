@@ -15,7 +15,6 @@ using namespace std;
 bool cmp(int &a, int &b) {
     return a > b;
 }
-
 int wordNum(vector<int> &alpha){
     int num = 9;
     int result = 0;
