@@ -14,7 +14,6 @@ int minNum(int n, int k, vector<int> coin) {
     
     return cnt;
 }
-
 int main() {
     int n, k;
     cin >> n >> k;
