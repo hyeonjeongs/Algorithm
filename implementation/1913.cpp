@@ -8,45 +8,32 @@ int dy[] = {1,0,-1,0};
 int main() {
     int n, k;
     int x=0, y=-1;
-    int result[] = {};
+    int result[2] = {0,0};
     cin >> n >> k;
 
     vector<vector<int>> spin(n+2, vector<int>(n+2,0));
     int num = n*n;
 
-    for(int i=0; i<4; i++) {
-        while(true) {
-            x += dx[i];
-            y += dy[i];
-            if(x<0 || x>n+1 || y<0 || y>n+1) {
-                x -= dx[i];
-                y -= dy[i];
-                break;
-            }
-            spin[y][x] = -1;
-        }
-
+    for (int i = 0; i <= n + 1; ++i) {
+        spin[0][i] = spin[n + 1][i] = spin[i][0] = spin[i][n + 1] = -1;
     }
 
     x=1; y=0;
-    while(num>3) {
+    while(num>=1) {
         for(int i=0 ;i<4; i++) {
-            if(num<3) {
+            if(num<1) {
                 break;
             }
 
             while(true) {
-                if(num<3) {
+                if(num<1) {
                     break;
                 }
                 x += dx[i];
                 y += dy[i];
-                if(num <=5 ) {
-                    cout<< x<< ' ' << y << " -> " << num <<endl;
-                    cout<< "dx : "<< dx[i] << " dy : " << dy[i] <<endl;
-                }
+
                 if(spin[y][x] !=0) {
-                    cout<< x << ' '<< y << " 입니다" << endl;
+
                     x -= dx[i];
                     y -= dy[i];
                     break;
@@ -54,9 +41,9 @@ int main() {
                 if(num == k){
                     result[0] = y; result[1] = x;
                 }
-                cout<<num << " !!"<<endl;
+
                 spin[y][x] = num--;
-                cout<<spin[y][x] << " !??"<<endl;
+
             }
         }
     }
