@@ -24,16 +24,13 @@ int main() {
             if(num<1) {
                 break;
             }
-
             while(true) {
                 if(num<1) {
                     break;
                 }
                 x += dx[i];
                 y += dy[i];
-
                 if(spin[y][x] !=0) {
-
                     x -= dx[i];
                     y -= dy[i];
                     break;
@@ -43,7 +40,6 @@ int main() {
                 }
 
                 spin[y][x] = num--;
-
             }
         }
     }
