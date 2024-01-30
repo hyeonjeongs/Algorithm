@@ -9,6 +9,7 @@ vector<string> words;
 bool cmp(string a, string b) {
     if (a.length() == b.length())
         return a < b;
+
     return a.length() < b.length();
 }
 
