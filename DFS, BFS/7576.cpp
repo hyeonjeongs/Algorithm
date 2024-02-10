@@ -60,6 +60,7 @@ int main() {
             }
         }
     }
+
     result = minDay(tomato);
 
     // 0 있으면 그냥 -1
