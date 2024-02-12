@@ -70,6 +70,7 @@ int main(){
             max_cnt = num;
         }
     }
+
     cout<< max_cnt;
     return 0;
 }
