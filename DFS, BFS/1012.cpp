@@ -56,6 +56,7 @@ int main() {
                 }
             }
         }
+
         cout << cnt << '\n';
     }
 
