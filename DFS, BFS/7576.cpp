@@ -42,6 +42,7 @@ int minDay(vector<vector<int>> &tomato) {
             }
         }
     }
+
     
     return cnt;
 }
