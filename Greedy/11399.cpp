@@ -11,7 +11,6 @@ int addMin(vector<int> &times, int n){
         sum+=times[i];
     }
     return sum;
-    
 }
 
 int main(){
