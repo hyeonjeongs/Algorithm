@@ -24,6 +24,7 @@ int dfs(int n) {
             }
         }
     }
+    
     return cnt;
 }
 
