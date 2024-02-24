@@ -15,6 +15,7 @@ int maxSequence(int n, vector<int> &sequence){
                 dp[i] = max(dp[i], sequence[i] + dp[j]);
             }
         }
+        
         result = max(result,dp[i]);
     }
     return result;
