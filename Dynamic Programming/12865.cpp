@@ -17,6 +17,7 @@ int maxPack(int n, int k, vector<pi> &product) {
             dp[i][j] = max(dp[i - 1][j - product[i].first] + product[i].second, dp[i - 1][j]); // 앞에꺼가 크면 배낭에 넣는 경우, 뒤에꺼가 크면 배낭에 안넣음
         }
     }
+    
     return dp[n][k];
 }
 
