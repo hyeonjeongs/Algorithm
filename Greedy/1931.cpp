@@ -21,7 +21,6 @@ int meetingCnt(int n) {
             end = meeting[i].second;
         }
     }
-
     return cnt;
 }
 int main() {
