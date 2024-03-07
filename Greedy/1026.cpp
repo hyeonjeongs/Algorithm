@@ -7,7 +7,6 @@ using namespace std;
 vector<int> a;
 vector<int> b;
 
-
 int main() {
 	int n, result=0;
 	cin >> n;
