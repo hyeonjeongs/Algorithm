@@ -10,7 +10,6 @@ int my_min = 1e9 + 1;
 vector<int> operation(4);
 vector<int> num(11);
 
-
 int calculation(int a, int b, int c) {
     switch (c) {
         case 0: //+
