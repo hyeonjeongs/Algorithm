@@ -7,6 +7,7 @@ int desSum(int n){
     int min_sum=1e6;
 
     int i;
+    
     for(i=n-1; i>0; i--){
         int sum = 0; // 분해합 전체 합
         string n_str = to_string(i); // 숫자 i를 string으로 숫자로 바꿔줌
