@@ -17,7 +17,6 @@ int chessChange(int row, int col, vector<vector<char>> &board) {
 
             else if ((i + j) % 2 && board[row + i][col + j] != 'W')
                 b_cnt++;
-
         }
     }
 
