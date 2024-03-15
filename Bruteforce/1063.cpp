@@ -15,6 +15,7 @@ void moveLocation(vector<int>& kings, vector<int>& stones, string input) {
             if(stones[0]-1<=0 || stones[0]-1>=9){
                 return;
             }
+            
             stones[0] = x-1;
         }
         kings[0]=x;
