@@ -125,6 +125,7 @@ int solution(vector<vector<int>> game_board, vector<vector<int>> table) {
             }
         }
     }
+    
     visited.assign(num, vector<bool>(num,false));
 
     for(int i=0; i<num; i++) {
