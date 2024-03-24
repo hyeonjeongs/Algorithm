@@ -21,7 +21,6 @@ vector<pair<int, int>> minNum(int n){
             dp[i+1].second = i;
         }
     }
-
     return dp;
 }
 
