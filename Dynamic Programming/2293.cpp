@@ -15,6 +15,7 @@ int makeCoin(vector<int> coin, int n, int k){
             dp[j] += dp[j-coin[i]]; // 2원을 이용하고 10원을 만드는 경우 [8]원에 저장된 데이터를 저장함
         }
     }
+    
     return dp[k];
 }
 
