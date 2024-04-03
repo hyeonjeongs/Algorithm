@@ -1,76 +1,59 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
 using namespace std;
+int arr[10][10] = {0};
+string str;
 int n, k, p, x;
-vector<vector<bool>> led;
-vector<int> floors;
 
-bool dfs(int index, int cnt, int i, vector<bool> change) {
-    if (cnt == p || index ==k) {
-        return false;
+int dfs(int dep, int cnt) {
+    if(dep >= str.length()) {
+        if(stoi(str) == x) return 0;
+        if(stoi(str)<=n && stoi(str)>=1) return 1;
+
+        return 0;
     }
 
-    int num = 0;
-    for (int m = 0; m < 10; m++) {
-        for (int n = 0; n < 7; n++) {
-            if (m == floors[i]) {
-                continue;
-            }
-            if (change[n] != led[m][n]) {
-                break;
-            }
-            num++;
+    int sum = 0;
+    int cur = str[dep] - '0'; // 현재 숫자
+    for(int i=0; i<10; i++) {
 
+        if(cur != i && arr[cur][i]<=cnt) {
+            str[dep] = i + '0'; // i로 바꾸기
+            sum += dfs(dep+1, cnt - arr[cur][i]);
+            str[dep] = cur + '0'; // 다시 돌려주기
         }
-        if (num == 7) {
-            return true;
-
+        if(cur == i) {
+            sum += dfs(dep+1, cnt);
         }
     }
-
+    return sum;
 }
 
-int main() {
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL); cout.tie(NULL);
+    int num[] = { 0b1111110, 0b0110000, 0b1101101, 0b1111001, 0b0110011, 0b1011011, 0b1011111, 0b1110000, 0b1111111, 0b1111011 };
 
-    cin >> n >> k >> p >> x;
-    led.push_back({1, 1, 1, 1, 1, 1, 0});
-    led.push_back({0, 1, 1, 0, 0, 0, 0});
-    led.push_back({1, 1, 0, 1, 1, 0, 1});
-    led.push_back({1, 1, 1, 1, 0, 0, 1});
-    led.push_back({0, 1, 1, 0, 0, 1, 1});
-    led.push_back({1, 0, 1, 1, 0, 1, 1});
-    led.push_back({1, 0, 1, 1, 1, 1, 1});
-    led.push_back({1, 1, 1, 0, 0, 0, 0});
-    led.push_back({1, 1, 1, 1, 1, 1, 1});
-    led.push_back({1, 1, 1, 1, 0, 1, 1});
+    cin>>n>>k>>p>>x; // 총 n층, k자리수, 반전횟수, 현재 층 수
+    str = to_string(x);
 
-    string floor_str = to_string(x); // 현재 층수
-    // 현재 층수 vector로 변환
-
-    for (int i = 0; i < k; i++) {
-        floors.push_back(floor_str[i] - '0'); // 현재 층수
-    }
-
-    int cnt = 0;
-    int result = 0;
-
-
-    vector<vector<int>> change_cnt(k);
-
-    // 바꾼 수가 n보다 작은 경우만 가능하도
-    // 비교할 때 비트마스킹으로 두개 비교해서
-    int index = 1;
-    for (int j = 0; j < 10; j++) {
-        vector<bool> current = led[floors[j]]; // 그 자리 수의 현재 인덱스들
-        vector<bool> change = current;
-        for(int i=0; i<7; i++) {
-            int num =0;
-            change[i] = !change[i];
-            cnt = dfs(index, cnt, i, change);
+    for(int i=0; i<10; i++) {
+        for(int j=0; j<10; j++) {
+            int k = num[i] ^ num[j];
+            while(k!=0) {
+                if(k & 1) {
+                    arr[i][j]++;
+                }
+                k>>=1;
+            }
         }
     }
+    while(str.length() < k) {
+        str.insert(str.begin(), '0');
+    }
+    cout << dfs(0, p)<<'\n';
 
     return 0;
 }
