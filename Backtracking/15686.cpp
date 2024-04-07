@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <limits.h>
 // 3:40
 using namespace std;
 typedef pair<int,int> pi;
@@ -16,7 +17,7 @@ void backTracking(int index, int cnt) {
     if(cnt ==m) {
         int sum =0;
         for(int i=0; i<city.size(); i++){
-            int current = 1e4;
+            int current = INT_MAX;
             for(int j=0; j<chicken.size(); j++) {
                 if(check[j]) {
                     int distance = abs(city[i].first-chicken[j].first) + abs(city[i].second - chicken[j].second);
