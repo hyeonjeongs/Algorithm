@@ -25,7 +25,6 @@ void dummyGame(queue<pi> que, vector<vector<bool>> apple, int n) {
         int nx = x+dx[direction];
         int ny = y+dy[direction];
         if(nx<=0 || nx>n || ny<=0 || ny>n || snake[ny][nx]) {
-
             break;
         }
 
