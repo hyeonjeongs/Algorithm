@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
-#define MAX_CHESS 40
+
 
 using namespace std;
 typedef pair<int,int> pi;
@@ -10,9 +10,12 @@ vector<vector<int>> chess_person; // 기사들 표시
 vector<vector<pi>> people; // i번 기사의 좌표들
 vector<int> energy; // i 번 기사의 에너지
 int l, n, q;
-int dr[] = {1,0,-1,0}; // 위, 오른쪽, 아래, 왼쪽
+int dr[] = {-1,0,1,0}; // 위, 오른쪽, 아래, 왼쪽
 int dc[] = {0,1,0,-1};
 
+bool outOfIndex(int r, int c) {
+    return !(r>=1 && r<=l && c>=1 && c<=l);
+}
 
 void init() {
     cin>>l>>n>>q;
@@ -26,7 +29,6 @@ void init() {
             cin>> chess[i][j];
         }
     }
-
 
     for(int i=1; i<=n; i++) { // i가 i번째 기사
         int r, c, h, w, k;
@@ -53,6 +55,7 @@ void removePerson(int index) {
     }
 }
 void goPeople(int index, int d) {
+
     // 이동 (벽 있으면 못 움직임)
     // 이동할 애들 찾기
     vector<int> visited(n+1, false);
@@ -97,20 +100,24 @@ void goPeople(int index, int d) {
             int nr = people[idx][j].first +dr[d];
             int nc = people[idx][j].second +dc[d];
 
-            if(chess_person[cr][cc] == idx){ // 투입 안된경우
-                chess_person[cr][cc] = 0;
-            }
-
-            chess_person[nr][nc] = idx;
-
+            chess_person[cr][cc] = 0;
             people[idx][j].first = nr;
             people[idx][j].second = nc;
+        }
+    }
+    for(int i=0; i<attack_person.size(); i++) { // 틀린 이유는 위에서 바꾸면서 한 부분에서 오류(이거 추가해서 됨)
+        int idx= attack_person[i];
+        for(int j=0; j<people[idx].size(); j++) {
+
+            int nr = people[idx][j].first;
+            int nc = people[idx][j].second;
+
+            chess_person[nr][nc] = idx;
         }
     }
 
     // 영역 check (데미지 감소)
     // 명령 받은애는 데미지 안 받음
-    cout<< attack_person.size() << " skf "<<endl;
     for(int i=1; i<attack_person.size(); i++) {
         int idx = attack_person[i];
         for(int j=0; j< people[idx].size(); j++) {
@@ -127,6 +134,8 @@ void goPeople(int index, int d) {
             }
         }
     }
+
+
 }
 
 int main() {
@@ -142,7 +151,7 @@ int main() {
         goPeople(i, d);
     }
 
-    int result = 0;
+    long long result = 0;
     for(int i=1; i<=n; i++) {
         if(energy[i] >0){
             result += (origin_energy[i] - energy[i]);
