@@ -29,7 +29,6 @@ void turnArray(vector <vector<int>> &arr, int n, int m, int r, int depth) {
                     way++;
                 }
             }
-
             arr[j + 1][j] = startValue;
         }
     }
