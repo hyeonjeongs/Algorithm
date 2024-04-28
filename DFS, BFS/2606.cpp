@@ -12,6 +12,7 @@ int dfs(int n) {
     st.push(1);
     visited[1] = true;
 
+    
     int cnt = 0;
     while (!st.empty()) {
         int node = st.top();
