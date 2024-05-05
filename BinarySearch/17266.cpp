@@ -15,7 +15,6 @@ int lightSet(int height, vector<int> lightLocation, int n){
     if(lightLocation[0]>height){
         return 0;
     }
-
     for(int i=1; i<lightLocation.size(); i++){
         if(lightLocation[i] - lightLocation[i-1] >height*2){
             return 0;
