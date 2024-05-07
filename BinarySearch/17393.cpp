@@ -16,7 +16,7 @@ int main() {
     }
 
     for(int i=0; i<n; i++){
-        cout << upper_bound(viscosity.begin(), viscosity.end(), ink[i])- viscosity.begin() - (i+1) << " ";
+        cout << upper_b ound(viscosity.begin(), viscosity.end(), ink[i])- viscosity.begin() - (i+1) << " ";
     }
 
     return 0;

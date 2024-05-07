@@ -9,7 +9,6 @@ using namespace std;
  * 순차탐색 -> 100억 초과(시간초과)
  * 이진탐색으로 접근
  */
-
 bool binarySearch(int left, int right, vector<int>& a, int input){
     while(left<=right){
         int mid = (left+ right)/2;
