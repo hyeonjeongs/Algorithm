@@ -12,7 +12,6 @@ void dfsTree(int prev, int curr) {
     if (parent[curr]) {
         return;
     }
-
     parent[curr] = prev;
 
     for (int i = 0; i < tree[curr].size(); i++) {
