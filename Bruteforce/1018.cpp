@@ -19,6 +19,7 @@ int chessChange(int row, int col, vector<vector<char>> &board) {
                 b_cnt++;
         }
     }
+    
 
     //최솟값 리턴
     if (b_cnt > SIZE / 2)
