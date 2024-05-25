@@ -79,7 +79,6 @@ void makeBlock(int wall) {
             }
         }
     }
-
 }
 
 
