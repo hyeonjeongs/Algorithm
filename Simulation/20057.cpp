@@ -23,6 +23,7 @@ vector<vector<int>> sand;
 int result = 0;
 
 bool outOfRange(int x, int y) {
+    
     return x>=0 && y>=0 && x<n && y<n;
 }
 
