@@ -30,7 +30,6 @@ bool outOfRange(int x, int y) {
 void windSand(int x, int y, int direction) {
     int amount = sand[y][x];
     int reminder = sand[y][x];
-
     sand[y][x] = 0;
 
     for(int i=0; i<10; i++) {
