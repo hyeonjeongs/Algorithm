@@ -13,7 +13,6 @@ void turnArray(vector <vector<int>> &arr, int n, int m, int r, int depth) {
             int startValue = arr[j][j];
             int r = j, c = j;
             int way = 0;
-
             while (way < 4) {
                 int new_r = r + dr[way];
                 int new_c = c + dc[way];
