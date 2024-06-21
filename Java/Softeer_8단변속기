@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException{
+        int status=-1;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = br.readLine().split(" ");
+        int num= Integer.parseInt(input[0]);
+        for(int i=1;i <8; i++) {
+            int current = Integer.parseInt(input[i]);
+            if(num < current && (status==1 || status==-1)) {
+                status = 1;
+            }
+            else if(num > current && (status==2 || status==-1)) {
+                status = 2;
+            } else {
+                status = 3;
+            }
+            num = current;
+        }
+        if(status ==1 ) {
+            System.out.println("ascending");
+        }else if(status ==2) {
+            System.out.println("descending");
+        } else{
+            System.out.println("mixed");
+        }
+        
+    }
+}
