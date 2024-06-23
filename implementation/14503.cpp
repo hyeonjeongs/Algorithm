@@ -13,6 +13,7 @@ int cleanRoom(int n, int m, int r, int c, int index, vector<vector<int> > room) 
     int result = 0;
 
     que.push({r,c});
+    
     while (!que.empty()) {
         pi location = que.front();
         int cr = location.first;
