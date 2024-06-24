@@ -2,42 +2,66 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
+    public static int[] visited1 = new int[100001];
+    public static int[] visited2 = new int[100001];
+    public static List<List<Integer>> nums= new ArrayList<>();
     
-    public static int bfs(int s, int t, int n, boolean[][] node) {
-        int[] visited = new int[n+1]; // 초기는 0, 지나가면1, 체크하면 음수
-        int cnt = 0;
-        Queue<Integer> que = new LinkedList<>();
-        que.add(s);
-        while(!que.isEmpty()) {
-            int num = que.peek();
-            que.poll();
-            
-            for(int i=1; i<=n; i++) {
-                if(i==t) {
-                    continue;
-                }
-                if(node[num][i] && visited[i]!=1) {
-                    que.add(i);
-                    visited[i] = 1;
-                }
+        public static boolean dfs2(int current, int end, int n) {
+        if(nums.get(current).size()<0 && current!=end)
+            return false;
+        boolean flag=false;
+        for(int i=0; i<nums.get(current).size(); i++) {
+            int next = nums.get(current).get(i);
+            if(next==end) {
+                flag=true;
+                continue;
+            }
+            if(visited2[next]==1) {
+                flag = true;
+                continue;
+            }
+            visited2[next] = 1;
+            if(!dfs2(next, end, n)) {
+                visited2[next]=0;
+            }
+            else {
+                flag = true;
             }
         }
-        
-        que.add(t);
-        while(!que.isEmpty()) {
-            int num = que.peek();
-            que.poll();
-            for(int i=1; i<=n; i++) {
-                if(i==s) {
-                    continue;
-                }
-                if(node[num][i]) {
-                    que.add(i);
-                    if(visited[i]==1) {
-                        cnt++;
-                        visited[i]=-1;
-                    }
-                }
+        return flag;
+    }
+    public static boolean dfs1(int current, int end, int n) {
+        if(nums.get(current).size()<0 && current!=end)
+            return false;
+        boolean flag=false;
+        for(int i=0; i<nums.get(current).size(); i++) {
+            int next = nums.get(current).get(i);
+            if(next==end) {
+                flag=true;
+                continue;
+            }
+            if(visited1[next]==1) {
+                flag = true;
+                continue;
+            }
+            visited1[next] = 1;
+            if(!dfs1(next, end, n)) {
+                visited1[next]=0;
+            }
+            else {
+                flag = true;
+            }
+        }
+        return flag;
+    }
+    public static int check(int n, int s, int t) {
+        int cnt = 0;
+        for(int i=1; i<=n; i++) {
+            if(i==s || i==t) {
+                continue;
+            }
+            if(visited1[i] ==1 && visited2[i] ==1) {
+                cnt+=1;
             }
         }
         return cnt;
@@ -49,20 +73,27 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
-        boolean[][] node = new boolean[n+1][n+1];
-
+    
+        
+        for(int i=0; i<=n; i++) {
+            nums.add(new ArrayList<>());
+        }
         for(int i=0; i<m; i++) {
             st = new StringTokenizer(br.readLine());
             int x = Integer.parseInt(st.nextToken());
             int y = Integer.parseInt(st.nextToken());
-            node[x][y]=true;
-
+            nums.get(x).add(y);
         }
         st = new StringTokenizer(br.readLine());
         int s = Integer.parseInt(st.nextToken());
         int t = Integer.parseInt(st.nextToken());
+        visited1[s] = 1;visited1[t] = 1;
+        visited2[s] = 1;visited2[t] = 1;
         
-        int result = bfs(s,t,n, node);
-        System.out.println(result);
+        dfs1(s,t,n); 
+        dfs2(t,s,n); 
+        int cnt = check(n,s,t);
+        System.out.println(cnt);
+        
     }
 }
