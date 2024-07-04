@@ -5,7 +5,6 @@ using namespace std;
 
 int main() {
     int left = 0, right = 0;
-
     int n, s;
     cin>>n>>s;
     int cnt = n+1;
