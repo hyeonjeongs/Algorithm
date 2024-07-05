@@ -9,7 +9,6 @@ vector<int> solution(vector<int> sequence, int k) {
     int min_size = sequence.size() +1;
     int sum = sequence[0];
     answer.assign(2,0);
-
     while(li <= ri && ri < sequence.size()) {
 
         if(sum < k) {
