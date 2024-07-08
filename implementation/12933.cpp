@@ -20,7 +20,6 @@ bool checkDuck(vector<int> &visited, int index) {
             break;
         }
     }
-    
     if(!current && index == 1) {
         visited.push_back(index);
     }
