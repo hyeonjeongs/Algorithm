@@ -12,7 +12,6 @@ int w = 1, h = 1;
 
 void bfs(vector<vector<int>> &island, int row, int col){
     queue<ci> q;
-
     q.push(ci(row, col));
     island[row][col] = 0; //방문 체크
 
