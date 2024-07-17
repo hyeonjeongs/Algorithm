@@ -29,6 +29,7 @@ vector<vector<int>> seatStudents(vector<int> order, vector<vector<int>> prefer, 
             }
         }
     }
+    
     blank[0][0]=blank[n-1][n-1]=blank[0][n-1]=blank[n-1][0] = 2;
 
     vector<pi> clears;
