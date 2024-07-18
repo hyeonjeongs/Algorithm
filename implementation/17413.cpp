@@ -16,6 +16,7 @@ void inverseWord(vector<char> str){
             }
             continue;
         }
+        
         //태크인 경우
         if(st.top()=='<'){
             if(str[i] == '>'){
