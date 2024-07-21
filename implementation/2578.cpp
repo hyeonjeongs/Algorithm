@@ -55,7 +55,6 @@ int lineCheck(vector<vector<int>> &check) {
         if(lines[i] ==1){
             cnt++;
         }
-
     }
 
     if(cnt>=3){
