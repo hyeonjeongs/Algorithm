@@ -10,6 +10,7 @@ void makeKeys(string word, int index) {
     istringstream iss(word);
     string token;
     vector<string> tokens;
+    
     while(getline(iss, token, ' ')) {
         tokens.push_back(token);
     }
