@@ -118,7 +118,6 @@ int main() {
         input.r--;
         input.c--;
         location[input.r][input.c].push_back(i);
-
         ball.push_back(input);
     }
 
