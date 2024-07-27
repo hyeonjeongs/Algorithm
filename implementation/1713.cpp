@@ -11,7 +11,6 @@ bool cmp(const tu &a, const tu &b ){
         return get<2> (a) < get<2> (b);
     return get<1> (a) > get<1> (b); //추천 횟수 오름차순
 }
-
 void recommendStudent(vector<tu>& students,int n, int rec_number, vector<int> &picture){
     if(picture.size() <n){ //사진틀 안찬경우
         students.push_back(make_tuple(rec_number,1, ++in_cnt)); // 학생 번호, 추천 받은 횟수, 들어간 순서
