@@ -17,6 +17,7 @@ string stackToString(stack<char> &left, stack<char> &right) {
     return pwd;
 }
 
+
 string findPassword(string str) {
     stack<char> left;
     stack<char> right;
