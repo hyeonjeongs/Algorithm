@@ -37,6 +37,7 @@ void dfs(int n, int v) {
                 visited[i] = true;
                 break;
             }
+            
         }
 
         //인접 리스트
