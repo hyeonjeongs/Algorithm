@@ -13,6 +13,7 @@ int dfs (int x, int y) {
     int cnt =1;
     queue<pi> que;
     que.push({x, y});
+    
     while(!que.empty()) {
         int cx = que.front().first;
         int cy = que.front().second;
