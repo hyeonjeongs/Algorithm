@@ -41,6 +41,7 @@ int main() {
         dfs(i);
         hack[i-1] = result;
         maxs = max(maxs, result);
+        
     }
 
     vector<int> result_number;
