@@ -14,7 +14,6 @@ int cnt=1;
 void dfs(int x, int y, int m, int n, vector<vector<int>> picture){
 
     visit[y][x] = true;
-
     for(int i=0; i<4; i++){
         int new_x = x+ dx[i];
         int new_y = y+ dy[i];
