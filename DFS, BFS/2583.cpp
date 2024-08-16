@@ -27,7 +27,6 @@ int dfs (int x, int y) {
             arr[ny][nx] = 1;
             que.push({nx, ny});
             cnt++;
-
         }
     }
     return cnt;
