@@ -22,6 +22,7 @@ void DFS(int x, int y) {
             DFS(nx, ny);
         }
     }
+    
 }
 int main(void) {
     ios_base::sync_with_stdio(false);
