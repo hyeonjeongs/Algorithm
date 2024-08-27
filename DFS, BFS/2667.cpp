@@ -26,6 +26,7 @@ void bfs(int y, int x) {
             bfs(new_y, new_x);
         }
     }
+    
 }
 
 int main() {
