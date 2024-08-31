@@ -23,7 +23,7 @@ int bfs(int n, int k) {
             result = visited[node] - 1;
             break;
         }
-        
+
         vector<int> child = {node - 1, node + 1, 2 * node};
 
         for (int i = 0; i < 3; i++) {
