@@ -42,7 +42,6 @@ int solution(vector<int> numbers, int target) {
         addNumber(i+1,target);
         nums[i] = -nums[i];
     }
-
     answer = result;
     return answer;
 }
