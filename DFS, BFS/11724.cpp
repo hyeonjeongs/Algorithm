@@ -18,7 +18,6 @@ void dfs(int cur) {
 int main() {
 
     cin >> n >> m;
-
     graph.assign(n + 1, vector<int>());
     for (int i = 0; i < m; i++) {
         int x, y;
