@@ -17,6 +17,7 @@ bool cmp(const info &a, const info &b) {
     if (a.math != b.math)
         return a.math > b.math;
     return a.name < b.name;
+    
 }
 
 int main() {
