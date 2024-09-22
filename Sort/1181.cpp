@@ -11,6 +11,7 @@ bool cmp(string a, string b) {
         return a < b;
 
     return a.length() < b.length();
+    
 }
 
 int main() {
