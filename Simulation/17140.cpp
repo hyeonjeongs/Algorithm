@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <map>
-#include <math.h>
+#include<string.h>
+
 #define MAX 101
 using namespace std;
 
@@ -35,6 +35,7 @@ int makeNumber(int r, int c, int k) {
         }
 
         if(r_size>=c_size) { // r 연산
+            int maxLen = 0;
             for(int i=1; i<=r_size; i++) {
                 memset(counter, 0, sizeof(counter)); // 카운터
                 vector<pi> part;
@@ -47,16 +48,21 @@ int makeNumber(int r, int c, int k) {
                     }
                 }
                 int lens = part.size();
-                r_size = max(r_size, lens*2);
+                maxLen = max(maxLen, lens*2);
                 sort(part.begin(), part.end(), cmp);
                 int index=1;
+                for(int j=1; j<MAX; j++) {
+                    arr[i][j] = 0;
+                }
                 for(int j=0; j<lens; j++) {
                     arr[i][index++] = part[j].first;
                     arr[i][index++] = part[j].second;
                 }
             }
+            c_size = maxLen;
 
         } else { // c 연산
+            int maxLen = 0;
             for(int j=1; j<=c_size; j++) {
                 memset(counter, 0, sizeof(counter)); // 카운터
                 vector<pi> part;
@@ -69,14 +75,18 @@ int makeNumber(int r, int c, int k) {
                     }
                 }
                 int lens = part.size();
-                c_size = max(c_size, lens*2);
+                maxLen = max(maxLen, lens*2);
                 sort(part.begin(), part.end(), cmp);
+                for(int i=1; i<MAX; i++) {
+                    arr[i][j] = 0;
+                }
                 int index=1;
                 for(int i=0; i<lens; i++) {
                     arr[index++][j] = part[i].first;
                     arr[index++][j] = part[i].second;
                 }
             }
+            r_size = maxLen;
         }
         time++;
 
