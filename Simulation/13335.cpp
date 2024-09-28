@@ -12,7 +12,7 @@ int moveTruck(vector<int> weight, int w, int l, int n) {
         if(index>=n && current_weight==0 && time>0){
             break;
         }
-        
+
         time++;
 
         // 한 칸 옮기기
