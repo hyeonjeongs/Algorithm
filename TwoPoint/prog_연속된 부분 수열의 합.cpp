@@ -3,6 +3,7 @@
 #include <iostream>
 using namespace std;
 
+/*
 vector<int> solution(vector<int> sequence, int k) {
     vector<int> answer;
     int li = 0, ri = 0;
@@ -29,6 +30,34 @@ vector<int> solution(vector<int> sequence, int k) {
             sum -= sequence[li++];
         }
     }
+
+    return answer;
+}*/
+
+vector<int> solution(vector<int> sequence, int k) {
+    vector<int> answer;
+
+    int li =0, ri=0;
+    int sum = sequence[0];
+    int dist = sequence.size() + 1;
+    answer.assign(2,0);
+
+    while(li <= ri && ri<sequence.size()) {
+        if(sum < k) {
+            sum += sequence[++ri];
+        } else if(sum == k) {
+            if(dist > ri - li +1) {
+                answer[0] = li;
+                answer[1] = ri;
+                dist = ri - li +1;
+            }
+            sum -= sequence[li++];
+        } else {
+            sum -= sequence[li++];
+        }
+    }
+
+
 
     return answer;
 }
