@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -100,4 +101,132 @@ int main() {
     cout << result << '\n';
 
     return 0;
+}*/
+
+
+
+#include <iostream>
+#include <vector>
+#include <queue>
+using namespace std;
+vector<vector<int>> space;
+vector<vector<int>> copy_space;
+vector<vector<bool>> visited;
+vector<pair<int,int>> pairs;
+int n, m;
+int dx[] = {-1,1,0,0};
+int dy[] = {0,0,1,-1};
+int result = 0;
+void spreadVirus() {
+
+    queue<pair<int, int>> que;
+
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<m; j++) {
+            if(space[i][j] == 2) {
+                que.push({j, i});
+            }
+        }
+    }
+
+    while(!que.empty()) {
+        int cx = que.front().first;
+        int cy = que.front().second;
+        que.pop();
+
+        for(int i=0; i<4; i++) {
+            int nx = cx + dx[i];
+            int ny = cy + dy[i];
+            if(nx<0 || nx>=m || ny<0 || ny>=n) {
+                continue;
+            }
+            if(space[ny][nx] == 0) {
+                space[ny][nx] = 2;
+                que.push({nx, ny});
+            }
+
+
+        }
+    }
+
 }
+int countVirus() {
+
+    int cnt=0;
+
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<m; j++) {
+            if(space[i][j]==0) {
+                cnt++;
+            }
+        }
+    }
+
+    return cnt;
+
+}
+
+void backtracking(int cnt) {
+    if(cnt == 3) {
+        space = copy_space;
+        spreadVirus();
+        result = max(result, countVirus());
+        return;
+    }
+
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<m; j++) {
+            if(copy_space[i][j]==0) {
+                copy_space[i][j] = 1;
+                backtracking(cnt+1);
+                copy_space[i][j] = 0;
+
+            }
+        }
+    }
+
+}
+
+int main() {
+
+    cin >> n>>m;
+    space.assign(n, vector<int>(m,0));
+
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<m; j++) {
+            cin >> space[i][j];
+        }
+    }
+    copy_space = space;
+
+    backtracking(0);
+
+    cout << result;
+    return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
