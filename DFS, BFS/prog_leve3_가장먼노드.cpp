@@ -28,7 +28,8 @@ int bfs(int n, int v) {
             }
         }
     }
-    
+
+
     sort(distance.begin(), distance.end(), greater<>());
     for(int i=1; i<=n; i++){
         if(distance[i] != distance[i-1])
