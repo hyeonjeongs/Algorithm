@@ -28,6 +28,6 @@ int solution(vector<vector<int>> ability) {
     visited.assign(rol, false);
     bfs(0,0, ability);
     answer = result;
-    
+
     return answer;
 }
