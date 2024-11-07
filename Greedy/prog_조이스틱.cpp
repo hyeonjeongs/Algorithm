@@ -1,7 +1,3 @@
-/**
- * 이렇게 풀면 "BBABAAAAAAB" 이런거 안됨 (왼쪽 갔다가 오른쪽으로 다시 가는거)
- * 다시 풀어봐야하듯
- */
 #include <string>
 #include <vector>
 #include <iostream>
@@ -27,50 +23,18 @@ int solution(string name) {
         num.push_back(result);
         answer += result;
     }
-
-
-    // 알파벳 이동
-    int index = 0;
-    int result=0;
-
+    cout << answer << endl;
+    int move = size-1;
     for(int i=0; i<size; i++) {
-        if(num[i] == 0) {
-            continue;
+        int cursor=i+1;
+        while(name[cursor]=='A' && cursor<size) {
+            cursor++;
         }
-        int r_index = i - index;
-        int l_index = index + (size-i);
-
-        if(r_index<=l_index) {
-            result+=r_index;
-
-        } else {
-            result+=l_index;
-
-        }
-        index = i;
-
+        move = min(move, i+ size-cursor + min(i, size-cursor));
     }
-    // 왼쪽으로 이동
-    int result_left=0;
-    index =0;
-    for(int i=size-1; i>=0; i--) {
-        if(num[i] == 0) {
-            continue;
-        }
-        int r_index = (i-index+size)%size;
-        int l_index = (index + (size-i))%size;
 
-        if(r_index<l_index) {
-            result_left+=r_index;
 
-        } else {
-            result_left+=l_index;
-        }
-        index = i;
-
-    }
-    cout << result <<"," << result_left <<endl;
-    answer += min(result, result_left);
+    answer += move;
 
     return answer;
 }
