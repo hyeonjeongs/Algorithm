@@ -49,7 +49,7 @@ vector<int> solution(vector<int> sequence, int k) {
             if(dist > ri - li +1) {
                 answer[0] = li;
                 answer[1] = ri;
-                dist = ri - li +1;z
+                dist = ri - li +1;
             }
             sum -= sequence[li++];
         } else {
