@@ -13,6 +13,7 @@ void backTracking(int index){
             cout<< nums[i] << " ";
         }
         cout << '\n';
+        
         return;
     }
 
