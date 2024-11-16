@@ -15,6 +15,7 @@ void backTracking(int start, int index){
         }
         cout<< '\n';
         return;
+        
     }
 
     for(int i = start; i<num.size(); i++){
