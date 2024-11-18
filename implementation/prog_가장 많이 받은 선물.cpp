@@ -62,7 +62,6 @@ int solution(vector<string> friends, vector<string> gifts) {
             }
         }
     }
-    
     sort(answers.begin(), answers.end(), greater<>());
     answer = answers[0];
     
