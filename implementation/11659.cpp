@@ -12,6 +12,7 @@ int main() {
     cin>>n>>m;
     vector<long long> num(n+1,0);
 
+    
     long long nums;
     for(int i=1; i<=n; i++) {
         cin>> nums;
