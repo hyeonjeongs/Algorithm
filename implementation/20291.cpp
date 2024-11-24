@@ -22,7 +22,6 @@ void formatSave(string str, map<string, int> &file_num, vector<string> &files){
 
 int main(){
     int n;
-
     cin>> n;
     vector<string> files;
     map<string, int> file_num;
