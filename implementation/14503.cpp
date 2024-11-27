@@ -22,6 +22,7 @@ int cleanRoom(int n, int m, int r, int c, int index, vector<vector<int> > room) 
             room[cr][cc] = -1; // 청소완료
             result++;
         }
+        
         int num = 0;
         for (int i = 0; i < 4; i++) {
             int nr = cr + dr[i];
