@@ -10,6 +10,7 @@ int main() {
     int cnt = n+1;
 
     vector<int> num(n+1, 0);
+    
     for(int i=0; i<n; i++) {
        cin >> num[i];
     }
