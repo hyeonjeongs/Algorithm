@@ -16,6 +16,7 @@ void backTracing(int index){
         }
         cout<<'\n';
         return;
+        
     }
 
     for(int i=0; i<n; i++){
