@@ -43,7 +43,6 @@ void dfs(int cnt, int index, vector<int> score) {
                     }
                 }
             }
-
         }
         return;
     }
