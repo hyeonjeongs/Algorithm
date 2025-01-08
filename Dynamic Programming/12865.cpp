@@ -3,6 +3,49 @@
 
 using namespace std;
 typedef pair<int, int> pi;
+vector<int> dp;
+int findWeight(vector<pi> bags, int k, int n) {
+
+    for(int i=0; i<n; i++) {
+        for(int j=k; j>=bags[i].first; j--) {
+            dp[j] = max(dp[j], bags[i].second + dp[j - bags[i].first]);
+        }
+    }
+    return dp[k];
+}
+
+int main() {
+    int n, k;
+    cin >> n >> k;
+    vector<pi> bags(n, pi(0,0));
+    dp.assign(100001, 0);
+
+    for(int i=0; i<n; i++) {
+        cin >> bags[i].first >> bags[i].second;
+    }
+
+    cout << findWeight(bags, k, n);
+
+    return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+#include <iostream>
+#include <vector>
+
+using namespace std;
+typedef pair<int, int> pi;
 
 int maxPack(int n, int k, vector<pi> &product) {
     vector<vector<int>> dp(n + 1, vector<int>(k + 1, 0));
@@ -17,7 +60,7 @@ int maxPack(int n, int k, vector<pi> &product) {
             dp[i][j] = max(dp[i - 1][j - product[i].first] + product[i].second, dp[i - 1][j]); // 앞에꺼가 크면 배낭에 넣는 경우, 뒤에꺼가 크면 배낭에 안넣음
         }
     }
-    
+
     return dp[n][k];
 }
 
@@ -33,4 +76,4 @@ int main() {
 
     cout << maxPack(n, k, product);
     return 0;
-}
+}*/
