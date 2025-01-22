@@ -1,66 +1,82 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
+long long mins = 1e10;
+long long maxs = 0;
 
+string min_str="";
+string max_str = "";
 int k;
-vector<bool> visited;
-vector<char> arrow;
-vector<string> num_str;
 
-bool isPossible(char a, char b, char oper) {
-    if(oper == '>') {
-        if(a<b) {
-            return false;
-        }
+vector<char> relation;
+void calcNum(string str) {
+
+    long long num = stoll(str);
+
+    if(num <mins) {
+        mins = num;
+        min_str = str;
     }
-    else if(oper == '<') {
-        if(a>b) {
-            return false;
-        }
+
+    if(num > maxs) {
+        maxs = num;
+        max_str = str;
     }
-    return true;
+
 }
 
-void dfs(int index, string str) {
-    if(index == k+1){
-        num_str.push_back(str);
+bool calcSize(int a, int b, char ch) {
+    if(ch == '<') {
+        return a<b;
+    }
+    if(ch=='>') {
+        return a>b;
+    }
+    return false;
+}
+
+void findNum(vector<bool> visited, int index, int num, string str) {
+    if(index > k) {
         return;
     }
-
+    if(k==index) {
+        calcNum(str);
+        return;
+    }
     for(int i=0; i<=9; i++) {
         if(visited[i]) {
             continue;
         }
-        if(index == 0 || isPossible(arrow[index-1],i+'0', arrow[index-1])) {
-            visited[i] = true;
-            dfs(index+1, str+to_string(i));
-            visited[i] = false;
+        if(!calcSize(num, i, relation[index])){
+            continue;
         }
-
+        string new_str= str + to_string(i);
+        visited[i] = true;
+        findNum(visited, index+1, i, new_str);
+        visited[i] = false;
     }
-
-
-
 }
+
 
 int main() {
 
-    cin >>k;
-
-    arrow.assign(k, ' ');
-    visited.assign(10, false);
-
+    cin >> k;
+    relation.assign(k+1, ' ');
     for(int i=0; i<k; i++) {
-        cin >> arrow[i];
+        cin >> relation[i];
     }
 
-    dfs(0, "");
 
-    sort(num_str.begin(), num_str.end());
-    cout << num_str[num_str.size()-1] <<'\n'<< num_str[0];
 
+    for(int i=0; i<=9; i++) {
+        vector<bool> visited(10, false);
+        visited[i] = true;
+        findNum(visited, 0, i, to_string(i));
+
+    }
+
+    cout << max_str << '\n' << min_str <<'\n';
 
     return 0;
 }
