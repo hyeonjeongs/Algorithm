@@ -22,9 +22,10 @@ vector<bool> checkPossible(int y, int x, vector<vector<int>> checked) {
             visited[checked[i][j]] = true;
         }
     }
+
     return visited;
 }
-void dfs(vector<vector<int>> checked) {
+void dfs(int y, int x,vector<vector<int>> checked) {
 
     if(current) {
         return;
@@ -37,6 +38,7 @@ void dfs(vector<vector<int>> checked) {
             }
         }
     }
+
     if(count==0) {
         result = checked;
         current = true;
@@ -48,12 +50,20 @@ void dfs(vector<vector<int>> checked) {
             if(checked[i][j]==0) {
 
                 vector<bool> visited = checkPossible(i, j, checked);
+
+                int cnt =0;
                 for(int k=1; k<=9; k++) {
                     if(!visited[k]) {
+                        cnt++;
                         checked[i][j] = k;
-                        dfs(checked);
+                        dfs(i, j, checked);
+
                     }
                 }
+                if(cnt==0){ // 처음에 여기 안해서  무한반복 됨
+                    return;
+                }
+
             }
         }
     }
@@ -63,14 +73,17 @@ int main() {
     arr.assign(9, vector<int>(9,0));
 
     for(int i=0; i<9; i++) {
+        string input;
+        cin >> input;
         for(int j=0; j<9; j++) {
-            scanf("%1d", &arr[i][j]);
+            arr[i][j] = input[j] - '0';
         }
     }
 
-    vector<vector<int>> checked = arr;
+    vector<vector<int>> checked(9, vector<int> (9,0));
+    checked = arr;
 
-    dfs(checked);
+    dfs(0,0,checked);
 
 
     for(int i=0; i<9; i++) {
