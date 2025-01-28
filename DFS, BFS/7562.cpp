@@ -27,6 +27,7 @@ int bfs(int n, int x1, int y1, int x2, int y2) {
             if(arr[ny][nx]>0){
                 continue;
             }
+            
             que.push({nx,ny});
             arr[ny][nx] = arr[y][x]+1;
 

@@ -48,7 +48,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> num[i];
     }
-    
+
     // 연산자 개수
     for (int i = 0; i < 4; i++) {
         cin >> operation[i];
