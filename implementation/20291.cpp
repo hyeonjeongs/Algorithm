@@ -11,7 +11,6 @@ void formatSave(string str, map<string, int> &file_num, vector<string> &files){
     int index = str.find('.');
     string name = str.substr(index+1);
 
-
     if(file_num.find(name) == file_num.end()){ // 현재 없는 확장자인 경우
         file_num[name] = 1;
         files.push_back(name);
