@@ -35,6 +35,7 @@ int main() {
                     y -= dy[i];
                     break;
                 }
+                
                 if(num == k){
                     result[0] = y; result[1] = x;
                 }
