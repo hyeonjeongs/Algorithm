@@ -1,24 +1,26 @@
 #include <iostream>
-#include <vector>
-#include <cstdio>
 #include <queue>
 
 using namespace std;
 
-vector<vector<int>> arr;
+int arr[1000][1000];
 int dx[] = {-1,1,0,0};
 int dy[] = {0,0,1,-1};
+
 struct DATA {
     int x;
     int y;
     int total;
     int cnt;
 };
+
 int bfs(int n, int m, int k) {
+
     queue<DATA> que;
-    que.push({1,1,1,0});
-    bool visited[n+1][m+1][10];
-    visited[1][1][0] = true;
+    que.push({0,0,1,0});
+    bool visited[1000][1000][10] = { false };
+
+    visited[0][0][0] = true;
     int result = -1;
 
     while(!que.empty()) {
@@ -28,7 +30,7 @@ int bfs(int n, int m, int k) {
         int cnt = que.front().cnt;
         que.pop();
 
-        if(x==m && y==n) {
+        if(x==m-1 && y==n-1) {
             result = total;
             break;
         }
@@ -37,7 +39,7 @@ int bfs(int n, int m, int k) {
             int nx = x + dx[i];
             int ny = y + dy[i];
 
-            if(nx<1 || nx>m || ny<1 || ny>n || visited[ny][nx][cnt]) {
+            if(nx<0 || nx>=m || ny<0 || ny>=n || visited[ny][nx][cnt]) {
                 continue;
             }
             if(arr[ny][nx] == 1) {
@@ -58,19 +60,20 @@ int bfs(int n, int m, int k) {
 }
 
 int main() {
-    ios::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL); cout.tie(NULL);
     int n, m, k;
 
     cin >> n >> m >> k;
 
-    arr.assign(n+1, vector<int>(m+1, 0));
-
-    for(int i=1; i<=n; i++) {
-        for(int j=1; j<=m; j++) {
-            scanf("%1d", &arr[i][j]);
+    for(int i=0; i<n; i++) {
+        string input;
+        cin >> input;
+        for(int j=0; j<m; j++) {
+            arr[i][j] = input[j] - '0';
         }
     }
+
 
     cout << bfs(n, m, k) << '\n';
 
