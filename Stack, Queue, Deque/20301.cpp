@@ -13,7 +13,6 @@ void forword(int k) {
     cout << deq.front() << "\n";
     deq.pop_front();
 }
-
 void reverse(int k) {
     for (int i = 0; i < k - 1; i++) {
         deq.push_front(deq.back());
