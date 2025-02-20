@@ -180,7 +180,6 @@ void backtracking(int cnt) {
                 copy_space[i][j] = 1;
                 backtracking(cnt+1);
                 copy_space[i][j] = 0;
-
             }
         }
     }
