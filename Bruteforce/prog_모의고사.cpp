@@ -32,6 +32,5 @@ vector<int> solution(vector<int> answers) {
             answer.push_back(i+1);
         }
     }
-
     return answer;
 }
