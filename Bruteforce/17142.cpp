@@ -62,7 +62,6 @@ void activeVirus(int time) {
             }
             que.push({nx, ny,ct+1});
         }
-
     }
     if (cnt == total) {
         min_num = min(min_num, current_time);
