@@ -29,6 +29,7 @@ void dfs(int height, int x, int y){
             dfs(height, cur_x, cur_y);
         }
     }
+    
 }
 
 int main(){
