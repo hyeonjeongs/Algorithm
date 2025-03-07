@@ -27,6 +27,7 @@ void dfs(int x, int y, vector<vector<int>>& cabbage, vector<vector<bool>>& visit
             dfs(nx, ny, cabbage, visited);
         }
     }
+    
 }
 
 int main() {
