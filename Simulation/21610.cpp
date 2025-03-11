@@ -19,7 +19,6 @@ int main() {
         for(int j=0; j<n; j++) {
             cin >> basket[i][j];
         }
-        
     }
     for(int i=0; i<m ; i++) {
         int a, b;
