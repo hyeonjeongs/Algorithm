@@ -21,7 +21,6 @@ vector<bool> is_possible;
 int dx[] = {0,-1,1,0};
 int dy[] = {-1,0,0,1};
 
-
 bool cmp(DATA a, DATA b) {
     if(a.y== b.y) {
         return a.x < a.y;
