@@ -17,6 +17,7 @@ void rotateRect(int x, int y, int sizes) {
             temp[j][sizes-i-1] = a[i+y][j+x];
         }
     }
+    
     for(int i=0; i<sizes; i++) {
         for(int j=0; j<sizes; j++) {
             a[i+y][j+x] = temp[i][j];
