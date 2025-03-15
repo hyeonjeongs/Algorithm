@@ -46,8 +46,7 @@ int main() {
     }
     
     vector<vector<int>> result = findMap(island, r, c);
-
-
+    
     int x_min=20, x_max=-1, y_min=20, y_max=-1;
     for(int i=1; i<=r; i++) {
         for(int j=1; j<=c; j++) {
