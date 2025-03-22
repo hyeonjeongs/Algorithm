@@ -25,7 +25,6 @@ int main(){
         cout<<'\n';
 
     }while(prev_permutation(arr.begin()+1, arr.end()));
-
     return 0;
 }
 
