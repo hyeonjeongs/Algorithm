@@ -28,7 +28,6 @@ void backTracing(int index) {
             check[i] = false;
         }
     }
-
 }
 
 int main() {
