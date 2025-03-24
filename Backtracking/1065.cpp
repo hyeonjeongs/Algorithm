@@ -10,7 +10,6 @@ void permutation(int n) {
 	}
 	else {
 		cnt = 99;
-
 		for (int i = 100; i <= n; i++) {
 			int hun = i / 100;
 			int ten = (i / 10) % 10;
