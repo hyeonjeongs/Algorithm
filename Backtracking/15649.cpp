@@ -23,7 +23,6 @@ void backTracking(int index){
             backTracking(index+1);
             check[i] = false;
         }
-
     }
 }
 
