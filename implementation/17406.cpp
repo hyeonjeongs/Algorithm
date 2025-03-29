@@ -81,7 +81,6 @@ int main()
         }
         calculateArr(copy_arr);
     }
-
     cout << mins << '\n';
     return 0;
 }
