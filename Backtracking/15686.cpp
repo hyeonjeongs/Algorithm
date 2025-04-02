@@ -36,7 +36,6 @@ void backTracking(int index, int cnt) {
         backTracking(i,cnt+1);
         check[i] = false;
     }
-
 }
 
 int main() {
