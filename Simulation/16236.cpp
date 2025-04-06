@@ -95,7 +95,7 @@ int bfs() {
         possible_num=0;
         energy++;
     }
-    
+
     return times;
 }
 
