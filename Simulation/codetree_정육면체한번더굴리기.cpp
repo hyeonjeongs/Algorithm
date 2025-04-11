@@ -43,7 +43,6 @@ int bfs(int x, int y) {
     visited[y][x] = true;
 
     while(!que.empty()) {
-
         int cx = que.front().first;
         int cy = que.front().second;
         que.pop();

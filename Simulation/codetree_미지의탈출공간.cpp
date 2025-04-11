@@ -34,6 +34,7 @@ struct TIMES { // 시간의벽 전개도
     int num;
     int dir;
 };
+
 INDEX out_index; // 동서남북 선택(0,1,2,3), r, c (탈출구 위치)
 INDEX machine_index; // 동서남북윗 밖 (0,1,2,3,4,5) r,c (현재 타임머신 위치)
 pi start_space;
@@ -42,7 +43,6 @@ vector<vector<TIMES>> times;
 vector<vector<bool>> space_visit;
 vector<vector<bool>> time_visit;
 vector<SPREAD> spreads;
-bool outTime = false; // 전개도 나왔는지 여부
 int result = 0;
 
 void makeTimeSpace(int idx, vector<vector<int>> arr) {
@@ -52,7 +52,7 @@ void makeTimeSpace(int idx, vector<vector<int>> arr) {
         for(int i=0; i<m; i++) {
             for(int j=0; j<m; j++) {
                 int number = copy[j][m-1-i];
-                times[2*m+i][m+j] = {number, idx};
+                times[m+i][2*m+j] = {number, idx};
             }
         }
 
@@ -75,7 +75,7 @@ void makeTimeSpace(int idx, vector<vector<int>> arr) {
     else if(idx==3) { //북 (점대칭)
         for(int i=0; i<m; i++) {
             for(int j=0; j<m; j++) {
-                int number = copy[n-1-i][m-1-j];
+                int number = copy[m-1-i][m-1-j];
                 times[i][m+j] = {number, idx};
             }
         }
@@ -133,11 +133,11 @@ struct SPREAD_RESULT {
     vector<vector<int>> space;
     vector<SPREAD> spreads;
 };
-SPREAD_RESULT spreadSpace(vector<vector<int>> current_space, vector<SPREAD> current_spreads) {
+SPREAD_RESULT spreadSpace(vector<vector<int>> current_space, vector<SPREAD> current_spreads, int num) {
     for(int i=0; i<current_spreads.size(); i++) {
         SPREAD current = current_spreads[i];
         if(current.isPossible) {
-            if(result%current.v == 0) { // 배수인경우만 퍼뜨리기
+            if(num%current.v == 0) { // 배수인경우만 퍼뜨리기
                 int nx = current.x + dx[current.dir];
                 int ny = current.y + dy[current.dir];
                 if(outOfSpace(nx, ny) || current_space[ny][nx]== 4 || current_space[ny][nx] == 1) {
@@ -177,7 +177,7 @@ void bfsSpace() { // 단면도 탐색
         vector<vector<int>> current_space = que.front().space;
         vector<SPREAD> current_spread = que.front().spread;
 
-        if(space[cy][cx] == 4) {
+        if(current_space[cy][cx] == 4) {
             mins = min(mins, num);
             machine_index = {5, cx, cy};
             spreads= current_spread;
@@ -185,7 +185,7 @@ void bfsSpace() { // 단면도 탐색
             break;
         }
 
-        SPREAD_RESULT current_result = spreadSpace(current_space, current_spread);
+        SPREAD_RESULT current_result = spreadSpace(current_space, current_spread, result +num);
         current_space = current_result.space;
         current_spread = current_result.spreads;
         que.pop();
@@ -219,7 +219,8 @@ void bfsTimes() {
 
     vector<vector<bool>> visited(3*m, vector<bool>(3*m, false));
     queue<BFS_TIME> que;
-    que.push({machine_index.x, machine_index.y, 4, 1, space, spreads});
+    que.push({machine_index.x, machine_index.y, 4, 0, space, spreads});
+
     visited[que.front().y][que.front().x] = true;
     int mins = 1e5;
 
@@ -233,10 +234,12 @@ void bfsTimes() {
 
         if(cx == out_index.x && cy == out_index.y && out_index.idx == dir) {
             mins = min(mins, num);
+            space = current_space;
+            spreads = current_spread;
             break;
         }
 
-        SPREAD_RESULT spread_result = spreadSpace(current_space, current_spread);
+        SPREAD_RESULT spread_result = spreadSpace(current_space, current_spread, num);
         current_spread = spread_result.spreads;
         current_space = spread_result.space;
         que.pop();
@@ -248,46 +251,50 @@ void bfsTimes() {
             if(outOfTime(nx, ny) || visited[ny][nx] || times[ny][nx].num == 1) {
                 continue;
             }
+
+            if(times[ny][nx].num != -1 && times[ny][nx].dir != times[cy][cx].dir) {
+                dir = times[ny][nx].dir;
+            }
             if(times[ny][nx].num == -1) {
                 if(times[cy][cx].dir ==0){ // 동
                     if(cy ==m) {
-                        nx = cy;
+                        nx = cy + (m-1);
                         ny = 3*m - cx - 1;
                         dir = 3;
-                    }if(cy == 2*m) {
-                        nx = 3*m - cy - 1;
+                    }if(cy == 2*m-1) {
+                        nx = 3*m - cy - 1 + (m-1);
                         ny = cx;
                         dir =2;
                     }
 
                 } else if(times[cy][cx].dir ==1){ // 서
                     if(cy ==m) {
-                        nx = cy;
+                        nx = 3*m - cy - 1 - (m-1);
+                        ny = cx ;
+                        dir = 3;
+                    }if(cy == 2*m-1) {
+                        nx = cy - (m-1);
                         ny = 3*m - cx - 1;
                         dir = 2;
-                    }if(cy == 2*m) {
-                        nx = 3*m - cy - 1;
-                        ny = cx;
-                        dir = 3;
                     }
                 } else if(times[cy][cx].dir ==2){ // 남
                     if(cx ==m) {
-                        nx = cy;
-                        ny = 3*m - cx - 1;
-                        dir = 0;
-                    }if(cx == 2*m) {
-                        nx = 3*m - cy - 1;
-                        ny = cx;
+                        nx = 3*m - cy -1;
+                        ny = cx + (m-1);
                         dir = 1;
+                    }if(cx == 2*m-1) {
+                        nx = cy;
+                        ny = 3*m - cx  -1 + (m-1);
+                        dir = 0;
                     }
                 } else if(times[cy][cx].dir ==3){ // 북
                     if(cx ==m) {
                         nx = cy;
-                        ny = 3*m - cx - 1;
+                        ny = 3*m - cx - 1- (m-1);
                         dir = 1;
-                    }if(cx == 2*m) {
+                    }if(cx == 2*m-1) {
                         nx = 3*m - cy - 1;
-                        ny = cx;
+                        ny = cx- (m-1);
                         dir = 0;
                     }
                 }
@@ -297,6 +304,7 @@ void bfsTimes() {
         }
     }
     if(mins != 1e5) {
+
         result += mins;
     }
 }
@@ -309,7 +317,6 @@ int main() {
     times.assign(3*m, vector<TIMES>(3*m, {-1,-1}));
     space_visit.assign(n, vector<bool>(n, false));
     time_visit.assign(n, vector<bool>(n, false));
-
 
     for(int i=0; i<n; i++) {
         for(int j=0; j<n; j++) {
@@ -330,7 +337,6 @@ int main() {
         makeTimeSpace(i, arr); // 전개도 만들기
 
     }
-
     for(int i=0; i<f; i++) {
         int r, c, d, v;
         cin >> r >> c >> d >> v;
@@ -340,6 +346,7 @@ int main() {
     findOutLocation(); // 탈출구 찾기
 
     bfsTimes();
+    cout << result << " lskjfsd " << endl;
     int current_result = result;
     if(result == 0) {
         cout << "-1" << '\n';
