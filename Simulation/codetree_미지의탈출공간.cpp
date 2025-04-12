@@ -229,6 +229,7 @@ void bfsTimes() {
         int cy = que.front().y;
         int num = que.front().num;
         int dir = que.front().dir;
+        cout << cx << ", " << cy << endl;
         vector<vector<int>> current_space = que.front().space;
         vector<SPREAD> current_spread = que.front().spread;
 
