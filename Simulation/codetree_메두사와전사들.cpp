@@ -403,6 +403,8 @@ int main() {
         changePossible();
         cout << move_result << " " << stone_num << " "<< attack_num << '\n';
     }
+    vector<vector<int>> arr;
+
 
     return 0;
 }

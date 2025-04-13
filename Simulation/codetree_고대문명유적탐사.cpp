@@ -163,6 +163,7 @@ int main() {
         if(results.size()==0) {
             break;
         }
+        
         answer+= results[0].cnt; // 유적개수
 
         getNewNode(results[0]);
