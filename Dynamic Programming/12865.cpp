@@ -109,3 +109,37 @@ int main() {
     cout << maxPack(n, k, product);
     return 0;
 }*/
+
+/*
+#include <iostream>
+#include <vector>
+
+using namespace std;
+typedef pair<int, int> pi;
+int dp[100001];
+int n, k;
+int findNum(vector<pi> arr) {
+
+    for(int i=0; i<arr.size(); i++) {
+        for(int j=k; j>=arr[i].first; j--) {
+            dp[j] = max(dp[j], arr[i].second + dp[j- arr[i].first]);
+        }
+    }
+    return dp[k];
+}
+
+int main() {
+
+    cin >> n>>k;
+    vector<pi> arr(n, {0,0});
+
+    for(int i=0; i<n; i++) {
+        int w, v;
+        cin >> w >> v;
+        arr.push_back({w, v});
+    }
+    cout << findNum(arr);
+    return 0;
+
+}
+*/
