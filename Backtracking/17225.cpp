@@ -21,7 +21,6 @@ void makeNum(int left, int right, string path) {
         // 오른쪽에 숫자를 하나 적는 과정
         makeNum(left, right + 1, path + path + str[right + 1]); //오른쪽에 있는 값 전달
     }
-    
 }
 
 int main() {

@@ -11,6 +11,7 @@ int main() {
     for(int i=0; i<n; i++) {
         cin >> arr[i];
     }
+
     int result = 0;
     int left =0, right=0;
     int cnt = 0;
