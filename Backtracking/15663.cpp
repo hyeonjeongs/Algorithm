@@ -17,7 +17,6 @@ void backTracing(int index) {
         cout << "\n";
         return;
     }
-
     int before = -1; //전에 사용한 값
     for (int i = 0; i < n; i++) {
         if (!check[i] && arr[i] != before) { // 직전 수열의 마지막 항만 다른지 확인 하면 중복 수열 제거 가능
