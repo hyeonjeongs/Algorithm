@@ -17,7 +17,6 @@ int main() {
     for(int i=0; i<10; i++) {
         num[i] = i;
     }
-
     sort(num.begin(), num.end());
     long long min_num = 9999999999;
     long long max_num = 0;
