@@ -3,38 +3,30 @@
 #include <string>
 
 using namespace std;
+string strs;
 
-int checkSpin(string str) {
-    int sizes = str.size();
-    vector<bool> checked(sizes, false);
-
-    string currents = str;
-    int result = 0;
-    for(int i=0; i<sizes/2; i++) {
-        if(str[i] != str[sizes-i-1]) {
-            result = -1;
-            break;
+int isCheck(int left, int right, bool isUse) {
+    while(left < right) {
+        if(strs[left] != strs[right]) {
+            if(isUse) {
+                if(isCheck(left+1, right, false) == 0 || isCheck(left, right-1, false) == 0) {
+                    return 1;
+                }
+            }
+            return 2;
         }
+        left++; right--;
     }
-    if(result == 0) {
-        return result;
-    }
-
-    for(int i=0; i<sizes; i++) {
-        string copy1 = currents;
-        string copy2 = currents;
-        currents = copy.substr(0,) + copy.substr(i+1);
-    }
-
+    return 0;
 }
 
 int main() {
     int t;
     cin >> t;
     while(t--) {
-        string str;
-        cin >> str;
-        cout << checkSpin(str) << '\n';
+
+        cin >> strs;
+        cout << isCheck(0, strs.size()-1, true) << '\n';
     }
     return 0;
 }
