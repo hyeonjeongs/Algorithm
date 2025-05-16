@@ -26,7 +26,6 @@ int turtleMinArea(string str) {
             case 'R':
                 direction = (direction + 1) % 4;
                 break;
-
         }
         min_x = min(min_x, cur.first);
         min_y = min(min_y, cur.second);
