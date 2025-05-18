@@ -29,6 +29,7 @@ int main() {
         }
     }
 
+    
     vector<int> cnt(n,0);
     int max_cnt = 0;
     int index=0;
