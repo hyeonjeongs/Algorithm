@@ -24,7 +24,6 @@ void bfs(int a, int b, int c, int d, int current) {
             if(arr[i][j]>0) {
                 continue;
             }
-
             int empties=0, likes =0;
             for(int k=0; k<4; k++) {
                 int nx = j + dx[k];
