@@ -18,7 +18,6 @@ void moveDirection(int dir, int s) {
 
     int ddx = dx[dir];
     int ddy = dy[dir];
-
     // 이동
     for(int i=0; i<cloud.size(); i++) {
         int nx= cloud[i].second;
