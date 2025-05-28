@@ -14,6 +14,7 @@ void findOrder(string order, int index, string str, vector<int> course) {
 
     for(int i=0; i<course.size(); i++) {
         if(course[i] == str.length()) {
+            sort(str.begin(), str.end()); // 여기서 정렬하면됨
             if(maps.find(str)!= maps.end()) {
                 idxs[maps[str]].first++;
             } else {
