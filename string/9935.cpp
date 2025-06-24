@@ -18,7 +18,6 @@ int main() {
         }
     }
 
-
     if(res==""){
         res = "FRULA";
     }
