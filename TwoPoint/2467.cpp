@@ -23,6 +23,7 @@ int main() {
             diff = abs(sums);
             result[0] = arr[left];
             result[1] = arr[right];
+            
         }
         if(sums <0) {
             left++;
