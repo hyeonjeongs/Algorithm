@@ -17,6 +17,7 @@ int wordChecker(string word, vector<int> alpha){
         }
         return 0;
     }
+    
     return 1;
 }
 
