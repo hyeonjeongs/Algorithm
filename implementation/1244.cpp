@@ -20,7 +20,6 @@ vector<int> changeSwitch(vector<int> switches, vector<pair<int, int>> students, 
                     switches[num + j] = !switches[num +j];
                     switches[num - j] = !switches[num -j];
                 }
-
             }
         }
     }
