@@ -132,6 +132,7 @@ int main() {
             result += ball[i].m;
         }
     }
+    
     cout << result << '\n';
 
     return 0;
