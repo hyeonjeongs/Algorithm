@@ -17,6 +17,7 @@ int main() {
     for (int i = 0; i <= n + 1; ++i) {
         spin[0][i] = spin[n + 1][i] = spin[i][0] = spin[i][n + 1] = -1;
     }
+    
 
     int num = n * n;
     int dir = 0; // 방향 인덱스
