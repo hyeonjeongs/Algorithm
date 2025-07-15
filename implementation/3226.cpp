@@ -12,7 +12,6 @@ int calculateCharge(int h, int m, int time) {
         else {
             ans += 5; // 1분에 5원
         }
-
         h += (++m / 60) % 24; // 1분 더했을때 시간으로 넘어가는지
         m %= 60; //시간으로 넘어간경우 분 변경
     }
