@@ -29,7 +29,6 @@ bool cmp(string a, string b) {
         } else {
             two = b[i];
         }
-
         if(one == two) {
             continue;
         }
