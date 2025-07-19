@@ -46,7 +46,6 @@ void calcRange(vector<pi> location, vector<vector<bool>> visit) {
             tribe[4] += country[i][j];
         }
     }
-    
     tribe[0] = total - tribe[1] - tribe[2] - tribe[3] - tribe[4];
 
     int mins = 1e6;
