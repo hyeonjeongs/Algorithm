@@ -23,6 +23,7 @@ int desSum(int n){
             min_sum = min(i, min_sum);
         }
     }
+    
     if(min_sum==1e6){
         return 0;
     }
