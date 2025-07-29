@@ -32,7 +32,6 @@ int findNode(int sx, int sy, int ex, int ey) {
     visit[sy][sx] = true;
     queue<Result> que;
     que.push({sx, sy, 0});
-    int result_num = 0;
 
     while(!que.empty()) {
 
@@ -42,14 +41,13 @@ int findNode(int sx, int sy, int ex, int ey) {
         que.pop();
 
         if(x== ex && y == ey) {
-            result_num = cnt;
-            break;
+            return cnt;
         }
 
         for(int i=0; i<4; i++) {
             int cx = x + dx[i];
             int cy = y + dy[i];
-            if(!visit[cy][cx] && !outOfBounds(cx, cy)) {
+            if(!outOfBounds(cx, cy) && !visit[cy][cx]) {
                 que.push({cx, cy, cnt+1});
                 visit[cy][cx] = true;
             }
@@ -60,11 +58,14 @@ int findNode(int sx, int sy, int ex, int ey) {
                 ccx += dx[i];
                 ccy += dy[i];
                 if(outOfBounds(ccx,ccy)) {
+                    ccx -= dx[i];
+                    ccy -= dy[i];
                     break;
                 }
-                if(ccx<=0 || ccx>=3 || ccy<=0 || ccy>=3 ||boards[ccy][ccx]!=0 ) {
+                if(boards[ccy][ccx]!=0){
                     break;
                 }
+
             }
             if(!outOfBounds(ccx, ccy) && !visit[ccy][ccx]) {
                 que.push({ccx, ccy, cnt+1});
@@ -73,19 +74,19 @@ int findNode(int sx, int sy, int ex, int ey) {
 
         }
     }
-    return result_num;
+    return 0;
 }
 
 void bfs(int sr, int sc, int card_index, int cnt, int move_cnt) {
 
     pi current = cards[card_index];
     pi last = pi(0,0);
-    int number = boards[current.first][current.second];
+    int numbers = boards[current.first][current.second];
     for(int i=0; i<2; i++) {
-        if(pairs[number][i].first== current.first && pairs[number][i].second== current.second){
+        if(pairs[numbers][i].first== current.first && pairs[numbers][i].second== current.second){
             continue;
         }
-        last = pairs[number][i];
+        last = pairs[numbers][i];
     }
     if(boards[sr][sc]>0 && cnt ==0) { //처음 시작이 0이 아닌경우 처리
         pi lasts = pi(0,0);
@@ -98,6 +99,7 @@ void bfs(int sr, int sc, int card_index, int cnt, int move_cnt) {
         }
         move_cnt += findNode(sc, sr, lasts.second, lasts.first);
         move_cnt +=2;
+        cnt+=2;
         sr = lasts.first;
         sc = lasts.second;
         pair_visited[number] = true;
