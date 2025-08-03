@@ -30,6 +30,7 @@ void bfs() {
             if(nx<0 || nx>=m || ny<0 || ny>=n*h) {
                 continue;
             }
+            
             if(rect[ny][nx] == 0) {
                 rect[ny][nx] = 1;
                 total--;
