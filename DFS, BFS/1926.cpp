@@ -54,7 +54,6 @@ int main() {
             }
         }
     }
-
     cout << total <<'\n'<< max_size;
     return 0;
 }
