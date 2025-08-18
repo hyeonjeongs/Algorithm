@@ -23,7 +23,6 @@ void changeWords(string begin, vector<string> words, string target, int result) 
             if(words[i][j] != begin[j]) {
                 cnt++;
             }
-            
         }
 
         if(cnt==1) {
