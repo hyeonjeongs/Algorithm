@@ -113,6 +113,7 @@ bool isEndGame(vector<vector<char>> game) {
     if(is_possible && (is_end || is_full)) {
         return true;
     }
+    
     return false;
 }
 
