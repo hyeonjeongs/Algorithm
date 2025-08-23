@@ -23,7 +23,6 @@ vector<int> changeSwitch(vector<int> switches, vector<pair<int, int>> students, 
             }
         }
     }
-
     return switches;
 }
 
