@@ -19,6 +19,7 @@ void rotate(deque<info> &belt, int n){
     if(belt[n-1].robot){
         belt[n-1].robot = false;
     }
+    
 }
 
 void move(deque<info> &belt, int n) {
