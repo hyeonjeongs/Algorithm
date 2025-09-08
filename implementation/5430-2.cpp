@@ -59,7 +59,7 @@ int main() {
                         cout << arr[j];
                     } else {
                         cout << arr[j] << ",";
-                    }c 
+                    }
                 }
             }
             cout << "]" << '\n';
