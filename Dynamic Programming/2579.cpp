@@ -2,6 +2,31 @@
 #include <vector>
 
 using namespace std;
+int main() {
+    int n;
+    cin >> n;
+    vector<int> stairs(n, 0);
+    for (int i=0; i<n; i++) {
+        cin >> stairs[i];
+    }
+
+    vector<int> dp(n+1, 0);
+    dp[1] = stairs[0];
+    dp[2] = stairs[1] + stairs[0];
+
+    for (int i=3; i<=n; i++) {
+        dp[i] = stairs[i-1] + max(dp[i-2], dp[i-3]+stairs[i-2]);
+    }
+    cout << dp[n] << '\n';
+    return 0;
+}
+
+
+/*
+#include <iostream>
+#include <vector>
+
+using namespace std;
 
 int dp(vector<int> stairs, int n) {
     vector<int> number(n+1,0);
@@ -29,19 +54,7 @@ int main() {
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 /*
