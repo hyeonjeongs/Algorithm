@@ -1,46 +1,42 @@
-// 한가지 방향을 쭉 가는게 아니라 여러방향가면서 최단경로 찾는거라서 bfs임
-
 #include <iostream>
-#include <queue>
 #include <vector>
+#include <queue>
 
 using namespace std;
-const int SIZE = 100000;
+typedef pair<int, int> pi;
+const int SIZE = 1e5+1;
+int main() {
+    int n, k;
 
-int bfs(int n, int k) {
-    queue<int> q;
-    vector<int> visited(SIZE+1, 0);
+    cin >> n >> k;
+    vector<int> location(SIZE, 0);
+    vector<bool> visited(SIZE, false);
+    queue<pi> que;
 
-    q.push(n);
-    visited[n] = 1; // 수빈 위치에서 시작
-    int result = 0;
+    int time = 1e5+1;
+    que.push({n, 0});
+    visited[n] = true;
 
-    while (!q.empty()) {
-        int node = q.front();
-        q.pop();
 
-        if (node == k) {
-            result = visited[node] - 1;
+    while (!que.empty()) {
+        int current_loc = que.front().first;
+        int times = que.front().second;
+        que.pop();
+        if (current_loc == k) {
+            time = min(time, times);
             break;
         }
 
-        vector<int> child = {node - 1, node + 1, 2 * node};
+        vector<int> next_location = {current_loc-1, current_loc+1, current_loc*2};
 
-        for (int i = 0; i < 3; i++) {
-            if (child[i] >= 0 && child[i] <= SIZE && !visited[child[i]]) {
-                visited[child[i]] = visited[node] + 1;
-                q.push(child[i]);
+        for (int i=0; i<3; i++) {
+            if (next_location[i]>=0 && next_location[i]<SIZE && !visited[next_location[i]]) {
+                que.push({next_location[i], times+1});
+                visited[next_location[i]] = true;
             }
         }
     }
-    return result;
-}
+    cout << time << '\n';
 
-int main() {
-    int n, k; // 수빈, 동생
-
-    cin >> n >> k;
-    cout << bfs(n, k) << '\n';
-
-    return 0;
+    return 0;;
 }
