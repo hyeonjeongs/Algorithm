@@ -1,27 +1,28 @@
 #include <iostream>
 #include <vector>
-#include <string>
 
 using namespace std;
 
 int main() {
-    string str, pops, new_str="";
+    string str, contains;
     cin >> str;
-    cin >> pops;
-    int length= pops.size();
-    string res = "";
+    cin >> contains;
+    int size = contains.size();
+    string result = "";
 
-    for(auto &ch: str) {
-        res+=ch;
-        if(res.size()>=length && res.substr(res.size()-length, length) == pops) {
-            res.erase(res.end()-length, res.end());
+    for (char ch: str) {
+        result+=ch;
+        if (result.size() >= size) {
+            string current = result.substr(result.size()-size, size);
+            if (current == contains) {
+                result.erase(result.size()-size, size);
+            }
         }
     }
-
-    if(res==""){
-        res = "FRULA";
+    string answer = "FRULA";
+    if (result!="") {
+        answer = result;
     }
-    cout << res;
+    cout << answer;
     return 0;
-
 }
