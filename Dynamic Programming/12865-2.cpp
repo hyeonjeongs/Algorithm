@@ -1,27 +1,22 @@
-#include <iostream>
-#include <vector>
+# include <iostream>
+# include <vector>
 
 using namespace std;
 typedef pair<int, int> pi;
-// 무게 k일 때 가치가 가장 높은 것
 int main() {
     int n, k;
     cin >> n >> k;
-    vector<int> dp(k+1, 0);
-    vector<pi> weight(n,pi(0,0));
-
-
-    for(int i=0; i<n; i++) {
-        int v, w;
+    vector<pi> arr;
+    for (int i=0; i<n; i++) {
+        int w, v;
         cin >> w >> v;
-        weight.push_back({w,v});
+        arr.push_back({w,v});
     }
+    vector<int> dp(1e5+1, 0);
 
-
-
-    for(int i=0; i<weight.size(); i++) {
-        for(int j=k; j>=weight[i].first; j--) {
-            dp[j] = max(dp[j], dp[j-weight[i].first] + weight[i].second);
+    for (int i=0; i<arr.size(); i++) {
+        for (int j=k; j>=arr[i].first; j--) {
+            dp[j] = max(dp[j], dp[j-arr[i].first] + arr[i].second);
         }
     }
 
